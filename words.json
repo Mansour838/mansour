@@ -1860,5 +1860,19 @@
     "unit": "p.4",
     "notes": "",
     "bookId": "book_2"
+  },
+  {
+    "id": 134,
+    "arabic": "赛里木",
+    "plain": "赛里木",
+    "zh": "赛里木",
+    "en": "",
+    "pos": "",
+    "diff": 1,
+    "root": "",
+    "morph": "",
+    "unit": "p.5",
+    "notes": "",
+    "bookId": "book_2"
   }
 ]
