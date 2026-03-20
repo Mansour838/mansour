@@ -1,0 +1,4331 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="manifest" href="data:application/json;base64,eyJuYW1lIjogIk1hbnNvdXIgXHUwNjQ1XHUwNjQ2XHUwNjM1XHUwNjQ4XHUwNjMxIiwgInNob3J0X25hbWUiOiAiTWFuc291ciIsICJkZXNjcmlwdGlvbiI6ICJBcmFiaWMgVm9jYWJ1bGFyeSBcdTAwYjcgXHU5NjNmXHU2MmM5XHU0ZjJmXHU4YmVkXHU4YmNkXHU2YzQ3IiwgInN0YXJ0X3VybCI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwZDBmMTQiLCAidGhlbWVfY29sb3IiOiAiI2M5YTg0YyIsICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBMU1USWdOVEV5SWo0S0lDQThaR1ZtY3o0S0lDQWdJRHhzYVc1bFlYSkhjbUZrYVdWdWRDQnBaRDBpWW1jaUlIZ3hQU0l3SlNJZ2VURTlJakFsSWlCNE1qMGlNVEF3SlNJZ2VUSTlJakV3TUNVaVBnb2dJQ0FnSUNBOGMzUnZjQ0J2Wm1aelpYUTlJakFsSWlCemRIbHNaVDBpYzNSdmNDMWpiMnh2Y2pvak1UTXhOakZsSWk4K0NpQWdJQ0FnSUR4emRHOXdJRzltWm5ObGREMGlNVEF3SlNJZ2MzUjViR1U5SW5OMGIzQXRZMjlzYjNJNkl6QmtNR1l4TkNJdlBnb2dJQ0FnUEM5c2FXNWxZWEpIY21Ga2FXVnVkRDRLSUNBZ0lEeHNhVzVsWVhKSGNtRmthV1Z1ZENCcFpEMGlaMjlzWkNJZ2VERTlJakFsSWlCNU1UMGlNQ1VpSUhneVBTSXhNREFsSWlCNU1qMGlNVEF3SlNJK0NpQWdJQ0FnSUR4emRHOXdJRzltWm5ObGREMGlNQ1VpSUhOMGVXeGxQU0p6ZEc5d0xXTnZiRzl5T2lObE1HTXdObUVpTHo0S0lDQWdJQ0FnUEhOMGIzQWdiMlptYzJWMFBTSXhNREFsSWlCemRIbHNaVDBpYzNSdmNDMWpiMnh2Y2pvallUZzNZekpoSWk4K0NpQWdJQ0E4TDJ4cGJtVmhja2R5WVdScFpXNTBQZ29nSUR3dlpHVm1jejRLSUNBOElTMHRJRUpoWTJ0bmNtOTFibVFnY205MWJtUmxaQ0J5WldOMElDMHRQZ29nSUR4eVpXTjBJSGRwWkhSb1BTSTFNVElpSUdobGFXZG9kRDBpTlRFeUlpQnllRDBpTVRFeUlpQm1hV3hzUFNKMWNtd29JMkpuS1NJdlBnb2dJRHdoTFMwZ1UzVmlkR3hsSUdKdmNtUmxjaUF0TFQ0S0lDQThjbVZqZENCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnY25nOUlqRXhNaUlnWm1sc2JEMGlibTl1WlNJZ2MzUnliMnRsUFNJall6bGhPRFJqSWlCemRISnZhMlV0ZDJsa2RHZzlJamdpSUhOMGNtOXJaUzF2Y0dGamFYUjVQU0l3TGpJMUlpOCtDaUFnUENFdExTQkJjbUZpYVdNZzJZVWdaMng1Y0dnc0lHTmxiblJsY21Wa0lDMHRQZ29nSUR4MFpYaDBJSGc5SWpJMU5pSWdlVDBpTXpJd0lpQUtJQ0FnSUdadmJuUXRabUZ0YVd4NVBTSk9iM1J2SUU1aGMydG9JRUZ5WVdKcFl5d2djMlZ5YVdZaUlBb2dJQ0FnWm05dWRDMXphWHBsUFNJek1qQWlJQW9nSUNBZ1ptOXVkQzEzWldsbmFIUTlJamN3TUNJS0lDQWdJR1pwYkd3OUluVnliQ2dqWjI5c1pDa2lJQW9nSUNBZ2RHVjRkQzFoYm1Ob2IzSTlJbTFwWkdSc1pTSUtJQ0FnSUdSdmJXbHVZVzUwTFdKaGMyVnNhVzVsUFNKaGRYUnZJajdaaFR3dmRHVjRkRDRLSUNBOElTMHRJRlJvYVc0Z1oyOXNaQ0IxYm1SbGNteHBibVVnWVdOalpXNTBJQzB0UGdvZ0lEeHlaV04wSUhnOUlqRTFOaUlnZVQwaU16Y3dJaUIzYVdSMGFEMGlNakF3SWlCb1pXbG5hSFE5SWpRaUlISjRQU0l5SWlCbWFXeHNQU0lqWXpsaE9EUmpJaUJ2Y0dGamFYUjVQU0l3TGpVaUx6NEtQQzl6ZG1jKyIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9LCB7InNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUI0Yld4dWN6MGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TUM5emRtY2lJSFpwWlhkQ2IzZzlJakFnTUNBMU1USWdOVEV5SWo0S0lDQThaR1ZtY3o0S0lDQWdJRHhzYVc1bFlYSkhjbUZrYVdWdWRDQnBaRDBpWW1jaUlIZ3hQU0l3SlNJZ2VURTlJakFsSWlCNE1qMGlNVEF3SlNJZ2VUSTlJakV3TUNVaVBnb2dJQ0FnSUNBOGMzUnZjQ0J2Wm1aelpYUTlJakFsSWlCemRIbHNaVDBpYzNSdmNDMWpiMnh2Y2pvak1UTXhOakZsSWk4K0NpQWdJQ0FnSUR4emRHOXdJRzltWm5ObGREMGlNVEF3SlNJZ2MzUjViR1U5SW5OMGIzQXRZMjlzYjNJNkl6QmtNR1l4TkNJdlBnb2dJQ0FnUEM5c2FXNWxZWEpIY21Ga2FXVnVkRDRLSUNBZ0lEeHNhVzVsWVhKSGNtRmthV1Z1ZENCcFpEMGlaMjlzWkNJZ2VERTlJakFsSWlCNU1UMGlNQ1VpSUhneVBTSXhNREFsSWlCNU1qMGlNVEF3SlNJK0NpQWdJQ0FnSUR4emRHOXdJRzltWm5ObGREMGlNQ1VpSUhOMGVXeGxQU0p6ZEc5d0xXTnZiRzl5T2lObE1HTXdObUVpTHo0S0lDQWdJQ0FnUEhOMGIzQWdiMlptYzJWMFBTSXhNREFsSWlCemRIbHNaVDBpYzNSdmNDMWpiMnh2Y2pvallUZzNZekpoSWk4K0NpQWdJQ0E4TDJ4cGJtVmhja2R5WVdScFpXNTBQZ29nSUR3dlpHVm1jejRLSUNBOElTMHRJRUpoWTJ0bmNtOTFibVFnY205MWJtUmxaQ0J5WldOMElDMHRQZ29nSUR4eVpXTjBJSGRwWkhSb1BTSTFNVElpSUdobGFXZG9kRDBpTlRFeUlpQnllRDBpTVRFeUlpQm1hV3hzUFNKMWNtd29JMkpuS1NJdlBnb2dJRHdoTFMwZ1UzVmlkR3hsSUdKdmNtUmxjaUF0TFQ0S0lDQThjbVZqZENCM2FXUjBhRDBpTlRFeUlpQm9aV2xuYUhROUlqVXhNaUlnY25nOUlqRXhNaUlnWm1sc2JEMGlibTl1WlNJZ2MzUnliMnRsUFNJall6bGhPRFJqSWlCemRISnZhMlV0ZDJsa2RHZzlJamdpSUhOMGNtOXJaUzF2Y0dGamFYUjVQU0l3TGpJMUlpOCtDaUFnUENFdExTQkJjbUZpYVdNZzJZVWdaMng1Y0dnc0lHTmxiblJsY21Wa0lDMHRQZ29nSUR4MFpYaDBJSGc5SWpJMU5pSWdlVDBpTXpJd0lpQUtJQ0FnSUdadmJuUXRabUZ0YVd4NVBTSk9iM1J2SUU1aGMydG9JRUZ5WVdKcFl5d2djMlZ5YVdZaUlBb2dJQ0FnWm05dWRDMXphWHBsUFNJek1qQWlJQW9nSUNBZ1ptOXVkQzEzWldsbmFIUTlJamN3TUNJS0lDQWdJR1pwYkd3OUluVnliQ2dqWjI5c1pDa2lJQW9nSUNBZ2RHVjRkQzFoYm1Ob2IzSTlJbTFwWkdSc1pTSUtJQ0FnSUdSdmJXbHVZVzUwTFdKaGMyVnNhVzVsUFNKaGRYUnZJajdaaFR3dmRHVjRkRDRLSUNBOElTMHRJRlJvYVc0Z1oyOXNaQ0IxYm1SbGNteHBibVVnWVdOalpXNTBJQzB0UGdvZ0lEeHlaV04wSUhnOUlqRTFOaUlnZVQwaU16Y3dJaUIzYVdSMGFEMGlNakF3SWlCb1pXbG5hSFE5SWpRaUlISjRQU0l5SWlCbWFXeHNQU0lqWXpsaE9EUmpJaUJ2Y0dGamFYUjVQU0l3TGpVaUx6NEtQQzl6ZG1jKyIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9XX0=">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMTMxNjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMGYxNCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlMGMwNmEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojYTg3YzJhIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIEJhY2tncm91bmQgcm91bmRlZCByZWN0IC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTEyIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDwhLS0gU3VidGxlIGJvcmRlciAtLT4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1vcGFjaXR5PSIwLjI1Ii8+CiAgPCEtLSBBcmFiaWMg2YUgZ2x5cGgsIGNlbnRlcmVkIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzIwIiAKICAgIGZvbnQtZmFtaWx5PSJOb3RvIE5hc2toIEFyYWJpYywgc2VyaWYiIAogICAgZm9udC1zaXplPSIzMjAiIAogICAgZm9udC13ZWlnaHQ9IjcwMCIKICAgIGZpbGw9InVybCgjZ29sZCkiIAogICAgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgIGRvbWluYW50LWJhc2VsaW5lPSJhdXRvIj7ZhTwvdGV4dD4KICA8IS0tIFRoaW4gZ29sZCB1bmRlcmxpbmUgYWNjZW50IC0tPgogIDxyZWN0IHg9IjE1NiIgeT0iMzcwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjYzlhODRjIiBvcGFjaXR5PSIwLjUiLz4KPC9zdmc+">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmciIHgxPSIwJSIgeTE9IjAlIiB4Mj0iMTAwJSIgeTI9IjEwMCUiPgogICAgICA8c3RvcCBvZmZzZXQ9IjAlIiBzdHlsZT0ic3RvcC1jb2xvcjojMTMxNjFlIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzBkMGYxNCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iZ29sZCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiNlMGMwNmEiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdHlsZT0ic3RvcC1jb2xvcjojYTg3YzJhIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogIDwvZGVmcz4KICA8IS0tIEJhY2tncm91bmQgcm91bmRlZCByZWN0IC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTEyIiBmaWxsPSJ1cmwoI2JnKSIvPgogIDwhLS0gU3VidGxlIGJvcmRlciAtLT4KICA8cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9IjExMiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjYzlhODRjIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1vcGFjaXR5PSIwLjI1Ii8+CiAgPCEtLSBBcmFiaWMg2YUgZ2x5cGgsIGNlbnRlcmVkIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzIwIiAKICAgIGZvbnQtZmFtaWx5PSJOb3RvIE5hc2toIEFyYWJpYywgc2VyaWYiIAogICAgZm9udC1zaXplPSIzMjAiIAogICAgZm9udC13ZWlnaHQ9IjcwMCIKICAgIGZpbGw9InVybCgjZ29sZCkiIAogICAgdGV4dC1hbmNob3I9Im1pZGRsZSIKICAgIGRvbWluYW50LWJhc2VsaW5lPSJhdXRvIj7ZhTwvdGV4dD4KICA8IS0tIFRoaW4gZ29sZCB1bmRlcmxpbmUgYWNjZW50IC0tPgogIDxyZWN0IHg9IjE1NiIgeT0iMzcwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjQiIHJ4PSIyIiBmaWxsPSIjYzlhODRjIiBvcGFjaXR5PSIwLjUiLz4KPC9zdmc+">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mansour">
+<meta name="theme-color" content="#c9a84c">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Mansour منصور — Arabic Vocabulary</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Noto+Naskh+Arabic:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+
+:root {
+  --bg:         #0d0f14;
+  --bg2:        #13161e;
+  --bg3:        #1a1e28;
+  --bg4:        #20253a;
+  --border:     #252a38;
+  --border2:    #2e3450;
+  --gold:       #c9a84c;
+  --gold-dim:   #7a6230;
+  --gold-glow:  rgba(201,168,76,0.18);
+  --gold-light: #e8c97a;
+  --teal:       #3ecfb2;
+  --teal-dim:   #1e6b5c;
+  --rose:       #e05c7a;
+  --lavender:   #8b82d4;
+  --sky:        #5ab4e0;
+  --text:       #d4d8e8;
+  --text-dim:   #6b7494;
+  --text-muted: #3d4460;
+  --success:    #3ecfb2;
+  --danger:     #e05c7a;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 20%, rgba(201,168,76,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 72% 8%,  rgba(201,168,76,0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 55%, rgba(90,180,224,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 42%, rgba(62,207,178,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 5%  80%, rgba(201,168,76,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 60% 90%, rgba(139,130,212,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 33% 70%, rgba(201,168,76,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 92% 70%, rgba(90,180,224,0.2) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── HEADER ─────────────────────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13,15,20,0.92);
+  backdrop-filter: blur(16px);
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+}
+
+.logo-icon {
+  width: 38px; height: 38px;
+  background: radial-gradient(circle at 40% 35%, var(--gold-light), #8a5c1a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 18px;
+  color: #fff;
+  box-shadow: 0 0 20px var(--gold-glow);
+  flex-shrink: 0;
+}
+
+.logo-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+nav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-btn {
+  padding: 7px 16px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.nav-btn:hover { color: var(--text); background: var(--bg3); }
+.nav-btn.active {
+  color: var(--gold);
+  background: rgba(201,168,76,0.08);
+  border-color: var(--gold-dim);
+}
+
+/* ── MAIN ────────────────────────────────────────────────── */
+main {
+  position: relative;
+  z-index: 10;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+.screen { display: none; }
+.screen.active { display: block; }
+
+/* ── HOME ────────────────────────────────────────────────── */
+.home-hero {
+  text-align: center;
+  padding: 48px 0 40px;
+}
+
+.home-hero h2 {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 52px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+  text-shadow: 0 0 40px rgba(201,168,76,0.3);
+}
+
+.home-hero p {
+  font-size: 13px;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: 'DM Mono', monospace;
+}
+
+.tired-btn {
+  margin-top: 18px;
+  padding: 7px 20px;
+  border-radius: 20px;
+  border: 1px solid rgba(139,130,212,0.4);
+  background: rgba(139,130,212,0.07);
+  color: var(--lavender);
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+.tired-btn:hover { background: rgba(139,130,212,0.15); border-color: var(--lavender); }
+
+/* Tired overlay */
+.tired-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.72);
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.tired-overlay.open { display: flex; }
+.tired-card {
+  background: var(--bg2);
+  border: 1px solid rgba(139,130,212,0.3);
+  border-radius: 20px;
+  padding: 36px 32px 28px;
+  max-width: 560px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 0 60px rgba(139,130,212,0.12);
+}
+.tired-body {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.tired-body p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.85;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+.tired-name {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 16px;
+  color: var(--lavender);
+}
+.tired-sign {
+  font-size: 15px !important;
+  color: var(--gold) !important;
+  font-weight: 500 !important;
+  text-align: center;
+  margin-top: 8px !important;
+}
+
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin: 32px 0;
+}
+
+.stat-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.2s;
+}
+#stat-due-card:hover {
+  border-color: var(--rose);
+  box-shadow: 0 0 20px rgba(224,92,122,0.15);
+}
+#stat-due-card .stat-num { color: var(--rose); }
+#clear-due-btn {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 1px 5px;
+  border-radius: 4px;
+  border: 1px solid rgba(224,92,122,0.4);
+  background: none;
+  color: var(--rose);
+  font-size: 9px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+  vertical-align: middle;
+}
+#stat-due-card:hover #clear-due-btn { opacity: 1; }
+
+.stat-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 28px;
+  font-weight: 500;
+  color: var(--gold);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+.action-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+/* Round size picker */
+/* ── Book + Lesson selector ──────────────────────────────── */
+.book-section {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+.book-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+.book-section-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+}
+.book-new-btn {
+  padding: 5px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--border2);
+  background: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.book-new-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+.book-rows { display: flex; flex-direction: column; gap: 8px; }
+.book-row {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+.book-row.active { border-color: var(--gold-dim); }
+.book-row-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  cursor: pointer;
+  background: var(--bg3);
+  transition: background 0.15s;
+  user-select: none;
+}
+.book-row-header:hover { background: rgba(255,255,255,0.04); }
+.book-radio {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--border2);
+  flex-shrink: 0;
+  transition: all 0.15s;
+  display: flex; align-items: center; justify-content: center;
+}
+.book-row.active .book-radio { border-color: var(--gold); background: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.2); }
+.book-row.active .book-radio::after { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--bg1); }
+.book-row-name { flex: 1; font-size: 14px; font-weight: 500; color: var(--text); }
+.book-row.active .book-row-name { color: var(--gold); }
+.book-row-meta { font-size: 11px; font-family: 'DM Mono', monospace; color: var(--text-muted); }
+.book-row-arrow { font-size: 11px; color: var(--text-muted); transition: transform 0.2s; }
+.book-row.active .book-row-arrow { transform: rotate(90deg); }
+.lesson-panel {
+  display: none;
+  padding: 10px 14px 14px;
+  background: rgba(0,0,0,0.15);
+  border-top: 1px solid var(--border);
+}
+.book-row.active .lesson-panel { display: block; }
+.lesson-panel-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.lesson-panel-label { font-size: 11px; color: var(--text-muted); letter-spacing: 0.05em; }
+.lesson-select-all {
+  font-size: 11px; color: var(--teal); cursor: pointer;
+  background: none; border: none; padding: 2px 6px; border-radius: 4px; transition: background 0.15s;
+}
+.lesson-select-all:hover { background: rgba(95,185,170,0.1); }
+.lesson-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.lesson-chip {
+  padding: 5px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: all 0.15s;
+  user-select: none;
+}
+.lesson-chip:hover { border-color: var(--border2); color: var(--text); }
+.lesson-chip.active { border-color: var(--teal); background: rgba(95,185,170,0.1); color: var(--teal); font-weight: 500; }
+.selection-summary { margin-top: 12px; font-size: 12px; color: var(--text-muted); font-family: 'DM Mono', monospace; min-height: 16px; }
+.selection-summary span { color: var(--teal); font-weight: 500; }
+/* New book overlay */
+.newbook-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.65); z-index: 200;
+  align-items: center; justify-content: center;
+}
+.newbook-overlay.open { display: flex; }
+.newbook-card {
+  background: var(--bg2); border: 1px solid var(--border2);
+  border-radius: 18px; padding: 28px; width: 360px; position: relative;
+}
+
+.round-picker {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.round-label {
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  color: var(--text-dim);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.round-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.round-chip {
+  padding: 5px 13px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+.round-chip:hover { border-color: var(--gold-dim); color: var(--text); }
+.round-chip.active { border-color: var(--gold); background: rgba(201,168,76,0.12); color: var(--gold); }
+
+
+.action-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 28px 24px;
+  cursor: pointer;
+  transition: all 0.25s;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.action-card:hover {
+  border-color: var(--gold-dim);
+  box-shadow: 0 0 32px var(--gold-glow);
+  transform: translateY(-2px);
+}
+
+.action-card.primary {
+  border-color: var(--gold-dim);
+  background: linear-gradient(135deg, rgba(201,168,76,0.06), rgba(201,168,76,0.02));
+}
+
+.action-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.action-text h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.action-text p {
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ── LEARN SCREEN ────────────────────────────────────────── */
+.learn-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.learn-meta {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.progress-bar-wrap {
+  flex: 1;
+  margin: 0 24px;
+  height: 4px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+/* Flashcard */
+.flashcard-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0 24px;
+}
+
+.card-scene {
+  perspective: 1200px;
+  width: 100%;
+  max-width: 480px;
+  height: 280px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.55s cubic-bezier(0.4,0,0.2,1);
+  transform-style: preserve-3d;
+}
+
+.card-scene.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  border: 1px solid var(--border);
+}
+
+.card-front {
+  background: linear-gradient(145deg, var(--bg2), var(--bg3));
+}
+
+.card-back {
+  background: linear-gradient(145deg, var(--bg3), var(--bg4));
+  transform: rotateY(180deg);
+  border-color: var(--gold-dim);
+}
+
+.card-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 52px;
+  font-weight: 600;
+  color: var(--gold-light);
+  text-align: center;
+  margin-bottom: 12px;
+  direction: rtl;
+  text-shadow: 0 0 30px rgba(201,168,76,0.2);
+  line-height: 1.3;
+}
+
+.card-hint {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.1em;
+}
+
+.card-meaning {
+  font-size: 26px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.card-pos {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--lavender);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.card-en {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+.card-audio-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  color: var(--sky);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+}
+.card-audio-btn:hover { background: var(--bg4); border-color: var(--sky); }
+
+/* Score buttons */
+.score-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  max-width: 480px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.score-row.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.score-btn {
+  padding: 12px 0;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s;
+  font-family: 'DM Mono', monospace;
+}
+
+.score-btn:hover { transform: translateY(-2px); }
+.score-btn .score-n { font-size: 20px; font-weight: 500; margin-bottom: 2px; }
+.score-btn .score-l { font-size: 9px; color: var(--text-dim); }
+
+.score-btn.s0:hover { border-color: var(--rose); box-shadow: 0 0 16px rgba(224,92,122,0.2); }
+.score-btn.s1:hover { border-color: #e0a05c; box-shadow: 0 0 16px rgba(224,160,92,0.2); }
+.score-btn.s2:hover { border-color: var(--lavender); box-shadow: 0 0 16px rgba(139,130,212,0.2); }
+.score-btn.s3:hover { border-color: var(--teal); box-shadow: 0 0 16px rgba(62,207,178,0.2); }
+
+.score-btn.s0 .score-n { color: var(--rose); }
+.score-btn.s1 .score-n { color: #e0a05c; }
+.score-btn.s2 .score-n { color: var(--lavender); }
+.score-btn.s3 .score-n { color: var(--teal); }
+
+.mode-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.mode-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-pill.active {
+  border-color: var(--gold-dim);
+  background: rgba(201,168,76,0.08);
+  color: var(--gold);
+}
+
+/* Quiz */
+.quiz-area {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.quiz-question {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.quiz-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--gold-light);
+  direction: rtl;
+  margin-bottom: 8px;
+  text-shadow: 0 0 30px rgba(201,168,76,0.2);
+}
+
+.quiz-root-row {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 28px;
+}
+.quiz-root-btn {
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  color: var(--text-muted);
+  font-size: 11px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.quiz-root-btn:hover { border-color: var(--lavender); color: var(--lavender); }
+.quiz-root-btn.revealed { border-color: var(--lavender); color: var(--lavender); background: rgba(139,130,212,0.08); }
+.quiz-root-display {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 22px;
+  color: var(--lavender);
+  direction: rtl;
+  letter-spacing: 0.1em;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.quiz-root-display.visible { opacity: 1; }
+
+.quiz-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.quiz-opt {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.quiz-opt:hover:not(.answered) {
+  border-color: var(--gold-dim);
+  background: rgba(201,168,76,0.05);
+}
+
+.quiz-opt.correct { border-color: var(--teal); background: rgba(62,207,178,0.08); color: var(--teal); }
+.quiz-opt.wrong   { border-color: var(--rose); background: rgba(224,92,122,0.08); color: var(--rose); opacity: 0.6; cursor: not-allowed; }
+
+/* Listen */
+
+
+/* ── WORD LIBRARY ────────────────────────────────────────── */
+.library-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.lib-back-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+  color: var(--text-dim);
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.lib-back-btn:hover { border-color: var(--gold-dim); color: var(--gold); background: rgba(201,168,76,0.06); }
+
+.lib-book-badge {
+  font-size: 12px;
+  color: var(--gold);
+  font-family: 'DM Mono', monospace;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(201,168,76,0.08);
+  border: 1px solid var(--gold-dim);
+  white-space: nowrap;
+}
+
+/* Trash button */
+.lib-select-btn {
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.lib-select-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+.lib-select-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(201,168,76,0.1); }
+
+/* Trash button */
+  padding: 7px 11px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+}
+.lib-trash-btn:hover { border-color: var(--rose); color: var(--rose); }
+
+.lib-export-btn {
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.lib-export-btn:hover { border-color: var(--teal); color: var(--teal); }
+.lib-trash-btn .trash-badge {
+  position: absolute;
+  top: -4px; right: -4px;
+  background: var(--rose);
+  color: #fff;
+  font-size: 9px;
+  font-family: 'DM Mono', monospace;
+  border-radius: 8px;
+  padding: 1px 4px;
+  min-width: 14px;
+  text-align: center;
+}
+
+/* Bulk action bar */
+.bulk-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.bulk-check-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  user-select: none;
+}
+.bulk-check-all input[type=checkbox] { width: 15px; height: 15px; accent-color: var(--rose); cursor: pointer; }
+.bulk-actions { display: flex; gap: 8px; margin-left: auto; }
+.bulk-btn {
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.bulk-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.bulk-btn.bulk-delete { border-color: var(--rose); color: var(--rose); }
+.bulk-btn.bulk-delete:not(:disabled):hover { background: rgba(224,92,122,0.1); }
+
+/* Word row checkbox */
+.wr-check { width: 15px; height: 15px; accent-color: var(--rose); cursor: pointer; flex-shrink: 0; }
+
+/* TOC card with edit button */
+.lib-toc-card-wrap { position: relative; }
+.lib-toc-edit-btn {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.15s, background 0.15s;
+}
+.lib-toc-card-wrap:hover .lib-toc-edit-btn { opacity: 1; }
+.lib-toc-edit-btn:hover { background: var(--bg3); color: var(--gold); }
+
+/* Book row edit button */
+.book-row-edit {
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: none;
+  color: var(--text-muted);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.15s;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+.book-row-edit:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+/* Trash list items */
+.trash-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 4px;
+  border-bottom: 1px solid var(--border);
+}
+.trash-row-arabic { font-family: 'Noto Naskh Arabic', serif; font-size: 18px; direction: rtl; flex-shrink: 0; color: var(--text-dim); }
+.trash-row-info { flex: 1; min-width: 0; }
+.trash-row-zh { font-size: 13px; color: var(--text); }
+.trash-row-meta { font-size: 11px; color: var(--text-muted); font-family: 'DM Mono', monospace; margin-top: 2px; }
+
+
+.lib-toc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+  padding: 8px 0;
+}
+.lib-toc-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 20px 18px;
+  cursor: pointer;
+  transition: all 0.18s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lib-toc-card:hover {
+  border-color: var(--gold-dim);
+  background: rgba(201,168,76,0.05);
+  transform: translateY(-2px);
+}
+.lib-toc-unit {
+  font-family: 'DM Mono', monospace;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--gold);
+}
+.lib-toc-count {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.lib-toc-preview {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 16px;
+  color: var(--text-dim);
+  direction: rtl;
+  margin-top: 4px;
+  line-height: 1.5;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.lib-lesson-crumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.lib-lesson-crumb span {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+
+.search-box {
+  flex: 1;
+  position: relative;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 10px 16px 10px 40px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-box input:focus { border-color: var(--gold-dim); }
+.search-box input::placeholder { color: var(--text-muted); }
+
+.search-box::before {
+  content: '⌕';
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 16px;
+}
+
+.add-word-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--gold-dim);
+  background: rgba(201,168,76,0.08);
+  color: var(--gold);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.add-word-btn:hover { background: rgba(201,168,76,0.14); }
+
+.import-btn {
+  padding: 9px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--teal-dim);
+  background: rgba(62,207,178,0.06);
+  color: var(--teal);
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.import-btn:hover { background: rgba(62,207,178,0.14); }
+
+/* Import overlay */
+.import-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.import-overlay.open { display: flex; }
+.import-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+.import-desc {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+.import-drop {
+  border: 2px dashed var(--border2);
+  border-radius: 14px;
+  padding: 32px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 12px;
+}
+.import-drop:hover { border-color: var(--teal-dim); background: rgba(62,207,178,0.03); }
+.import-drop.has-file { border-color: var(--teal-dim); background: rgba(62,207,178,0.04); }
+.import-drop-icon { font-size: 36px; margin-bottom: 8px; }
+.import-drop-text { font-size: 14px; color: var(--text); margin-bottom: 4px; }
+.import-drop-sub { font-size: 11px; color: var(--text-muted); font-family: 'DM Mono', monospace; }
+.import-file-name { font-size: 12px; color: var(--teal); margin-bottom: 16px; min-height: 18px; font-family: 'DM Mono', monospace; }
+.import-run-btn {
+  width: 100%;
+  padding: 13px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, rgba(62,207,178,0.2), rgba(62,207,178,0.08));
+  color: var(--teal);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 16px;
+  border: 1px solid var(--teal-dim);
+}
+.import-run-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.import-run-btn:not(:disabled):hover { background: rgba(62,207,178,0.25); }
+.import-status {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+  min-height: 20px;
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 8px;
+}
+.import-preview-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+.import-table-wrap { overflow-x: auto; margin-bottom: 20px; max-height: 300px; overflow-y: auto; }
+.import-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.import-table th {
+  background: var(--bg3);
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 500;
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  position: sticky; top: 0;
+}
+.import-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.import-table tr:hover td { background: rgba(201,168,76,0.03); }
+.import-table .td-arabic { font-family: 'Noto Naskh Arabic', serif; font-size: 16px; direction: rtl; color: var(--gold-light); }
+.import-table .td-root { font-family: 'Noto Naskh Arabic', serif; font-size: 14px; direction: rtl; color: var(--lavender); }
+.import-actions { display: flex; gap: 12px; justify-content: flex-end; }
+
+
+.word-list {
+  display: grid;
+  gap: 8px;
+}
+
+.word-row {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: 2fr 3fr 1fr auto;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.word-row-wrong {
+  border-color: rgba(224,92,122,0.4);
+  background: rgba(224,92,122,0.04);
+}
+.word-row-wrong:hover {
+  border-color: var(--rose) !important;
+  background: rgba(224,92,122,0.08) !important;
+}
+.word-row-selected {
+  background: rgba(201,168,76,0.07) !important;
+  border-color: var(--gold-dim) !important;
+}
+.word-row-selectable { cursor: pointer; }
+.word-row-selectable .wr-arabic,
+.word-row-selectable .wr-meaning { user-select: none; }
+
+.word-row:hover {
+  border-color: var(--gold-dim);
+  background: rgba(201,168,76,0.03);
+  transform: translateX(2px);
+}
+
+.wr-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 22px;
+  color: var(--gold-light);
+  direction: rtl;
+  font-weight: 600;
+}
+
+.wr-meaning { font-size: 13px; color: var(--text); }
+
+.wr-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.status-new      { background: var(--sky); }
+.status-learning { background: var(--gold); }
+.status-review   { background: var(--lavender); }
+.status-mastered { background: var(--teal); }
+
+.wr-status-text {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+}
+
+.wr-actions {
+  display: flex;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.word-row:hover .wr-actions { opacity: 1; }
+
+.wr-btn {
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text-dim);
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  font-family: 'DM Mono', monospace;
+}
+
+.wr-btn:hover { color: var(--text); border-color: var(--border2); }
+.wr-btn.danger { font-size: 9px; padding: 3px 6px; }
+.wr-btn.danger:hover { border-color: var(--rose); color: var(--rose); }
+
+/* ── WORD DETAIL OVERLAY ─────────────────────────────────── */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(7,9,14,0.85);
+  backdrop-filter: blur(8px);
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 40px 16px;
+}
+
+.overlay.open { display: flex; }
+
+.detail-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 580px;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+  animation: slideUp 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.detail-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border2);
+  background: var(--bg3);
+  color: var(--text-dim);
+  font-size: 18px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.2s;
+  line-height: 1;
+  z-index: 10;
+}
+
+.detail-close:hover { color: var(--text); border-color: var(--rose); background: rgba(224,92,122,0.08); }
+
+.detail-arabic-big {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 64px;
+  font-weight: 700;
+  color: var(--gold-light);
+  direction: rtl;
+  text-align: center;
+  margin-bottom: 4px;
+  text-shadow: 0 0 40px rgba(201,168,76,0.25);
+  line-height: 1.3;
+}
+
+.detail-meaning-big {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.detail-en-big {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+.detail-meta-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.detail-tag {
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-dim);
+}
+
+.detail-tag.pos { border-color: var(--lavender); color: var(--lavender); }
+.detail-tag.diff { border-color: var(--gold-dim); color: var(--gold); }
+.detail-tag.unit { border-color: var(--teal-dim); color: var(--teal); }
+
+.detail-section {
+  margin-bottom: 20px;
+}
+
+.detail-section-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-section-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Root badge - clickable */
+.root-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--gold-dim);
+  background: rgba(201,168,76,0.06);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.root-badge:hover {
+  background: rgba(201,168,76,0.12);
+  border-color: var(--gold);
+  box-shadow: 0 0 16px var(--gold-glow);
+}
+
+.root-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 22px;
+  color: var(--gold);
+  direction: rtl;
+}
+
+.root-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+}
+
+.morphology-text {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 16px;
+  color: var(--text);
+  direction: rtl;
+}
+
+.example-item {
+  background: var(--bg3);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+
+.example-ar {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 18px;
+  direction: rtl;
+  color: var(--text);
+  margin-bottom: 4px;
+  line-height: 1.6;
+}
+
+.example-zh {
+  font-size: 12px;
+  color: var(--text-dim);
+}
+
+.detail-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.detail-btn {
+  padding: 9px 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.detail-btn:hover { color: var(--text); border-color: var(--border2); }
+
+.detail-btn.ask-claude {
+  border-color: var(--lavender);
+  color: var(--lavender);
+  background: rgba(139,130,212,0.06);
+}
+.detail-btn.ask-claude:hover {
+  background: rgba(139,130,212,0.12);
+}
+
+.detail-btn.ask-gemini {
+  border-color: var(--sky);
+  color: var(--sky);
+  background: rgba(90,180,224,0.06);
+}
+.detail-btn.ask-gemini:hover {
+  background: rgba(90,180,224,0.12);
+}
+
+.detail-btn.delete-btn {
+  font-size: 9px;
+  padding: 6px 10px;
+  border-color: transparent;
+  margin-left: auto;
+}
+.detail-btn.delete-btn:hover { border-color: var(--rose); color: var(--rose); background: rgba(224,92,122,0.06); }
+.detail-btn.edit-btn {
+  border-color: var(--gold-dim);
+  color: var(--gold);
+  background: rgba(201,168,76,0.06);
+}
+.detail-btn.edit-btn:hover { background: rgba(201,168,76,0.14); }
+
+/* ── ROOT DERIVED WORDS OVERLAY ──────────────────────────── */
+.root-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(7,9,14,0.9);
+  backdrop-filter: blur(8px);
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 40px 16px;
+}
+
+.root-overlay.open { display: flex; }
+
+.root-detail-card {
+  background: var(--bg2);
+  border: 1px solid var(--gold-dim);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.7), 0 0 80px rgba(201,168,76,0.06);
+  animation: slideUp 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.root-detail-header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.root-detail-arabic {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 42px;
+  color: var(--gold);
+  direction: rtl;
+  margin-bottom: 4px;
+}
+
+.root-detail-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.derived-word-row {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.derived-word-row:hover {
+  border-color: var(--gold-dim);
+  background: rgba(201,168,76,0.04);
+}
+
+.derived-ar {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: 22px;
+  color: var(--gold-light);
+  direction: rtl;
+}
+
+.derived-zh { font-size: 13px; color: var(--text); }
+.derived-pos {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: var(--lavender);
+}
+
+/* ── ADD WORD FORM ────────────────────────────────────────── */
+.form-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(7,9,14,0.88);
+  backdrop-filter: blur(8px);
+  align-items: flex-start;
+  justify-content: center;
+  overflow-y: auto;
+  padding: 40px 16px;
+}
+
+.form-overlay.open { display: flex; }
+
+.form-card {
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 520px;
+  padding: 28px;
+  position: relative;
+  box-sizing: border-box;
+  animation: slideUp 0.3s cubic-bezier(0.4,0,0.2,1);
+}
+
+.form-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gold);
+  margin-bottom: 22px;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 480px) {
+  .form-grid { grid-template-columns: 1fr; }
+  .form-group.full { grid-column: 1; }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.form-group.full { grid-column: 1 / -1; }
+
+.form-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  color: #ffffff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.form-input {
+  padding: 9px 12px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.form-input:focus { border-color: var(--gold-dim); }
+.form-input::placeholder { color: var(--text-muted); font-size: 12px; }
+
+.form-input.arabic { font-family: 'Noto Naskh Arabic', serif; font-size: 18px; direction: rtl; }
+
+select.form-input {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%236b7494'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 28px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+.btn-save {
+  padding: 10px 22px;
+  border-radius: 10px;
+  border: 1px solid var(--gold-dim);
+  background: rgba(201,168,76,0.1);
+  color: var(--gold);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-save:hover { background: rgba(201,168,76,0.18); }
+
+.btn-cancel {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-dim);
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-cancel:hover { color: var(--text); border-color: var(--border2); }
+
+/* ── TOAST ───────────────────────────────────────────────── */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--bg3);
+  border: 1px solid var(--border2);
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-size: 13px;
+  color: var(--text);
+  z-index: 999;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+  white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.toast.show { transform: translateX(-50%) translateY(0); }
+.toast.gold  { border-color: var(--gold-dim); color: var(--gold); }
+.toast.teal  { border-color: var(--teal-dim); color: var(--teal); }
+.toast.rose  { border-color: var(--rose); color: var(--rose); }
+
+/* ── SESSION COMPLETE ────────────────────────────────────── */
+.session-end {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.session-end.show { display: flex; }
+
+.session-end h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: var(--gold);
+}
+
+.session-end p {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+  min-width: 360px;
+}
+
+.result-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.result-num {
+  font-family: 'DM Mono', monospace;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.result-lbl { font-size: 11px; color: var(--text-dim); }
+
+.again-btn {
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: 1px solid var(--gold-dim);
+  background: rgba(201,168,76,0.08);
+  color: var(--gold);
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-right: 10px;
+}
+
+.again-btn:hover { background: rgba(201,168,76,0.14); }
+
+/* empty state */
+.empty-state {
+  text-align: center;
+  padding: 60px 0;
+  color: var(--text-muted);
+}
+
+.empty-state .e-icon { font-size: 48px; margin-bottom: 16px; }
+.empty-state h3 { font-size: 16px; margin-bottom: 8px; color: var(--text-dim); }
+.empty-state p  { font-size: 12px; }
+
+/* scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+
+/* responsive */
+@media (max-width: 640px) {
+  nav .nav-btn { display: none; }
+  nav .nav-btn.active { display: block; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .action-row { grid-template-columns: 1fr; }
+  .word-row { grid-template-columns: 1fr 1fr; }
+  .wr-status, .wr-actions { display: none; }
+  .quiz-options { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ───────────────────────────────────────────── -->
+<header>
+  <div class="logo" onclick="goHome()">
+    <div class="logo-icon">م</div>
+    <span class="logo-name">Mansour</span>
+  </div>
+  <nav>
+    <button class="nav-btn active" data-screen="home"    onclick="switchScreen('home')">主页</button>
+    <button class="nav-btn"        data-screen="learn"   onclick="switchScreen('learn')">学习</button>
+    <button class="nav-btn"        data-screen="library" onclick="switchScreen('library')">词库</button>
+  </nav>
+</header>
+
+<!-- ── MAIN ─────────────────────────────────────────────── -->
+<main>
+
+  <!-- HOME -->
+  <div id="screen-home" class="screen active">
+    <div class="home-hero">
+      <h2>منصور</h2>
+      <p>Arabic Vocabulary · 阿拉伯语词汇</p>
+      <button class="tired-btn" onclick="openTired()">学累了？</button>
+    </div>
+
+    <div class="stats-strip">
+      <div class="stat-card">
+        <div class="stat-num" id="stat-total">0</div>
+        <div class="stat-label">词库总词数</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-mastered">0</div>
+        <div class="stat-label">已掌握</div>
+      </div>
+      <div class="stat-card" id="stat-due-card" onclick="openWrongWords()" style="cursor:pointer" title="点击查看答错的词汇">
+        <div class="stat-num" id="stat-due">0</div>
+        <div class="stat-label">待复习
+          <button id="clear-due-btn" onclick="event.stopPropagation();clearWrongWords()" title="清零">✕</button>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-streak">0</div>
+        <div class="stat-label">连续天数</div>
+      </div>
+    </div>
+
+    <!-- Book + Lesson selector -->
+    <div class="book-section">
+      <div class="book-section-header">
+        <span class="book-section-title">📖 选择词书与课次</span>
+        <button class="book-new-btn" onclick="openNewBook()">+ 新建词书</button>
+      </div>
+      <div id="book-lesson-panel"></div>
+    </div>
+
+    <!-- Round size picker -->
+    <div class="round-picker">
+      <span class="round-label">每轮题数</span>
+      <div class="round-chips" id="round-chips">
+        <button class="round-chip" onclick="setRoundSize(5)">5</button>
+        <button class="round-chip" onclick="setRoundSize(10)">10</button>
+        <button class="round-chip" onclick="setRoundSize(15)">15</button>
+        <button class="round-chip active" onclick="setRoundSize(20)">20</button>
+        <button class="round-chip" onclick="setRoundSize(25)">25</button>
+        <button class="round-chip" onclick="setRoundSize(30)">30</button>
+        <button class="round-chip" onclick="setRoundSize(35)">35</button>
+        <button class="round-chip" onclick="setRoundSize(40)">40</button>
+        <button class="round-chip" onclick="setRoundSize(45)">45</button>
+        <button class="round-chip" onclick="setRoundSize(50)">50</button>
+        <button class="round-chip" onclick="setRoundSize(55)">55</button>
+        <button class="round-chip" onclick="setRoundSize(60)">60</button>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <div class="action-card primary" onclick="startLearnMode('flashcard')">
+        <div class="action-icon">🃏</div>
+        <div class="action-text">
+          <h3>开始学习</h3>
+          <p>闪卡 · 随时可学，无限重复</p>
+        </div>
+      </div>
+      <div class="action-card" onclick="startLearnMode('quiz')">
+        <div class="action-icon">📝</div>
+        <div class="action-text">
+          <h3>测验模式</h3>
+          <p>四选一，测试你的掌握程度</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <div class="action-card" onclick="switchScreen('library')">
+        <div class="action-icon">📚</div>
+        <div class="action-text">
+          <h3>浏览词库</h3>
+          <p>查看所有词汇，添加新词</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEARN -->
+  <div id="screen-learn" class="screen">
+
+    <!-- Mode toggle + header -->
+    <div class="learn-header">
+      <div class="learn-meta" id="learn-progress-text">0 / 0</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill" id="progress-bar" style="width:0%"></div>
+      </div>
+      <button class="mode-pill" style="border-color:var(--rose);color:var(--rose)" onclick="endSession()">结束</button>
+    </div>
+
+    <div class="mode-toggle">
+      <button class="mode-pill active" id="pill-flashcard" onclick="switchMode('flashcard')">闪卡</button>
+      <button class="mode-pill" id="pill-quiz"      onclick="switchMode('quiz')">测验</button>
+    </div>
+
+    <!-- Flashcard -->
+    <div id="mode-flashcard">
+      <div class="flashcard-area">
+        <div class="card-scene" id="card-scene" onclick="flipCard()">
+          <div class="card-inner" id="card-inner">
+            <div class="card-face card-front">
+              <div class="card-arabic" id="fc-arabic">—</div>
+              <div class="card-hint">点击翻转</div>
+            </div>
+            <div class="card-face card-back">
+              <button class="card-audio-btn" onclick="event.stopPropagation();playAudio()" title="播放发音">🔊</button>
+              <div class="card-pos" id="fc-pos"></div>
+              <div class="card-meaning" id="fc-meaning">—</div>
+              <div class="card-en" id="fc-en"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="score-row" id="score-row">
+          <button class="score-btn s0" onclick="scoreCard(0)">
+            <div class="score-n">0</div>
+            <div class="score-l">不记得</div>
+          </button>
+          <button class="score-btn s1" onclick="scoreCard(1)">
+            <div class="score-n">1</div>
+            <div class="score-l">模糊</div>
+          </button>
+          <button class="score-btn s2" onclick="scoreCard(2)">
+            <div class="score-n">2</div>
+            <div class="score-l">费力</div>
+          </button>
+          <button class="score-btn s3" onclick="scoreCard(3)">
+            <div class="score-n">3</div>
+            <div class="score-l">轻松</div>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz -->
+    <div id="mode-quiz" style="display:none">
+      <div class="quiz-area">
+        <div class="quiz-question">
+          <div class="quiz-arabic" id="qz-arabic">—</div>
+          <div style="font-size:11px;color:var(--text-muted);font-family:'DM Mono',monospace">选出正确的中文释义</div>
+          <div class="quiz-root-row">
+            <button class="quiz-root-btn" id="qz-root-btn" onclick="showQuizRoot()">词根提示</button>
+            <span class="quiz-root-display" id="qz-root-display"></span>
+          </div>
+        </div>
+        <div class="quiz-options" id="quiz-options"></div>
+      </div>
+    </div>
+
+
+
+    <!-- Session End -->
+    <div class="session-end" id="session-end">
+      <h2>🎉 本轮完成</h2>
+      <p>已复习完这批词汇</p>
+      <div class="result-grid">
+        <div class="result-card">
+          <div class="result-num" id="res-total" style="color:var(--text)">0</div>
+          <div class="result-lbl">总词数</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num" id="res-correct" style="color:var(--teal)">0</div>
+          <div class="result-lbl">正确</div>
+        </div>
+        <div class="result-card">
+          <div class="result-num" id="res-wrong" style="color:var(--rose)">0</div>
+          <div class="result-lbl">待复习</div>
+        </div>
+      </div>
+      <div>
+        <button class="again-btn" onclick="restartSession()">再来一轮</button>
+        <button class="again-btn" style="border-color:var(--border);color:var(--text-dim)" onclick="goHome()">返回主页</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- LIBRARY -->
+  <div id="screen-library" class="screen">
+    <div class="library-toolbar">
+      <button class="lib-back-btn" id="lib-back-btn" onclick="libGoBack()">← 返回主页</button>
+      <span class="lib-book-badge" id="lib-book-badge"></span>
+      <div class="search-box" id="lib-search-box" style="display:none">
+        <input type="text" id="search-input" placeholder="搜索阿拉伯语或中文释义…" oninput="filterWords()">
+      </div>
+      <button class="import-btn" onclick="openImport()">📷 批量导入</button>
+      <button class="add-word-btn" onclick="openAddForm()">+ 添加词汇</button>
+      <button class="lib-select-btn" id="lib-select-btn" onclick="toggleLibSelectMode()" style="display:none">选择</button>
+      <button class="lib-trash-btn" id="lib-trash-btn" onclick="openTrash()" style="display:none" title="垃圾箱">🗑</button>
+      <button class="lib-export-btn" onclick="openGithubSync()" title="同步词库到 GitHub">☁ 同步</button>
+    </div>
+    <!-- Bulk selection action bar (shown only in select mode) -->
+    <div class="bulk-bar" id="bulk-bar" style="display:none">
+      <label class="bulk-check-all">
+        <input type="checkbox" id="bulk-check-all" onchange="toggleSelectAllLib(this.checked)">
+        <span id="bulk-count">已选 0 个</span>
+      </label>
+      <div class="bulk-actions">
+        <button class="bulk-btn bulk-delete" onclick="bulkDelete()" id="bulk-delete-btn" disabled>🗑 移入垃圾箱</button>
+      </div>
+    </div>
+    <div id="lib-toc"></div>
+    <div class="word-list" id="word-list" style="display:none"></div>
+  </div>
+
+</main>
+
+<!-- ── WORD DETAIL OVERLAY ───────────────────────────────── -->
+<div class="overlay" id="detail-overlay">
+  <div class="detail-card">
+    <button class="detail-close" onclick="closeDetail()">×</button>
+
+    <div class="detail-arabic-big" id="d-arabic">—</div>
+    <div class="detail-meaning-big" id="d-meaning">—</div>
+    <div class="detail-en-big" id="d-en"></div>
+
+    <div class="detail-meta-row" id="d-meta"></div>
+
+    <!-- Root -->
+    <div class="detail-section" id="d-root-section">
+      <div class="detail-section-title">词根</div>
+      <div class="root-badge" id="d-root-badge" onclick="openRootView()">
+        <span class="root-arabic" id="d-root-arabic">—</span>
+        <span class="root-label">点击查看派生词汇</span>
+      </div>
+    </div>
+
+    <!-- Morphology -->
+    <div class="detail-section" id="d-morph-section">
+      <div class="detail-section-title">词形变化 / 复数</div>
+      <div class="morphology-text" id="d-morph">—</div>
+    </div>
+
+    <!-- Examples -->
+    <div class="detail-section" id="d-examples-section">
+      <div class="detail-section-title">例句</div>
+      <div id="d-examples"></div>
+    </div>
+
+    <div class="detail-actions">
+      <button class="detail-btn edit-btn" onclick="openEditForm()">
+        ✏ 编辑词条
+      </button>
+      <button class="detail-btn ask-claude" onclick="askAI('claude')">
+        ✦ 问 Claude
+      </button>
+      <button class="detail-btn ask-gemini" onclick="askAI('gemini')">
+        ◈ 问 Gemini
+      </button>
+      <button class="detail-btn" onclick="learnThisWord()">
+        ▷ 立即学习
+      </button>
+      <button class="detail-btn delete-btn" onclick="deleteWord()" title="删除此词">
+        × 删除
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ── ROOT DERIVED OVERLAY ──────────────────────────────── -->
+<div class="root-overlay" id="root-overlay">
+  <div class="root-detail-card">
+    <button class="detail-close" onclick="closeRootView()" style="position:absolute;top:16px;right:16px">×</button>
+    <div class="root-detail-header">
+      <div class="root-detail-arabic" id="ro-root">—</div>
+      <div class="root-detail-label">词根 · 派生词汇</div>
+    </div>
+    <div id="ro-words"></div>
+  </div>
+</div>
+
+<!-- ── ADD WORD FORM ─────────────────────────────────────── -->
+<div class="form-overlay" id="form-overlay">
+  <div class="form-card">
+    <button class="detail-close" onclick="closeAddForm()">×</button>
+    <div class="form-title">添加新词汇</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">阿拉伯语（含短元音）</label>
+        <input class="form-input arabic" id="f-arabic" placeholder="مَثَلاً" dir="rtl">
+      </div>
+      <div class="form-group">
+        <label class="form-label">无元音版（搜索用）</label>
+        <input class="form-input arabic" id="f-arabic-plain" placeholder="مثلا" dir="rtl">
+      </div>
+      <div class="form-group">
+        <label class="form-label">中文释义</label>
+        <input class="form-input" id="f-zh" placeholder="例如">
+      </div>
+      <div class="form-group">
+        <label class="form-label">英文释义（可选）</label>
+        <input class="form-input" id="f-en" placeholder="example">
+      </div>
+      <div class="form-group">
+        <label class="form-label">词性</label>
+        <select class="form-input" id="f-pos">
+          <option value="">—</option>
+          <option>名词</option><option>动词</option><option>形容词</option>
+          <option>副词</option><option>介词</option><option>连词</option>
+          <option>代词</option><option>数词</option><option>感叹词</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">难度 1–5</label>
+        <select class="form-input" id="f-diff">
+          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">词根（三字母）</label>
+        <input class="form-input arabic" id="f-root" placeholder="ك ت ب" dir="rtl">
+      </div>
+      <div class="form-group">
+        <label class="form-label">词形变化 / 复数</label>
+        <input class="form-input arabic" id="f-morph" placeholder="كُتُب" dir="rtl">
+      </div>
+      <div class="form-group full">
+        <label class="form-label">课次页码（如 Unit 1, p.4-7）</label>
+        <input class="form-input" id="f-unit" placeholder="Unit 1, p.4-7">
+      </div>
+      <div class="form-group full">
+        <label class="form-label">备注</label>
+        <input class="form-input" id="f-notes" placeholder="校对说明、联想记忆…">
+      </div>
+    </div>
+    <div class="form-actions">
+      <button class="btn-cancel" onclick="closeAddForm()">取消</button>
+      <button class="btn-save" id="form-save-btn" onclick="saveWord()">保存词汇</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TRASH OVERLAY ─────────────────────────────────────── -->
+<div class="newbook-overlay" id="trash-overlay" onclick="if(event.target===this)closeTrash()">
+  <div class="newbook-card" style="max-width:580px;width:100%;max-height:80vh;display:flex;flex-direction:column">
+    <button class="detail-close" onclick="closeTrash()">×</button>
+    <div class="form-title">🗑 垃圾箱</div>
+    <div class="bulk-bar" id="trash-bulk-bar" style="margin:8px 0 12px">
+      <label class="bulk-check-all">
+        <input type="checkbox" id="trash-check-all" onchange="toggleTrashSelectAll(this.checked)">
+        <span id="trash-bulk-count">已选 0 个</span>
+      </label>
+      <div class="bulk-actions">
+        <button class="bulk-btn" onclick="restoreSelected()" id="trash-restore-btn" disabled style="border-color:var(--teal);color:var(--teal)">↩ 还原</button>
+        <button class="bulk-btn bulk-delete" onclick="permanentDeleteSelected()" id="trash-perm-btn" disabled>× 彻底删除</button>
+      </div>
+    </div>
+    <div id="trash-list" style="overflow-y:auto;flex:1"></div>
+  </div>
+</div>
+
+<!-- ── BOOK/LESSON EDIT OVERLAY ──────────────────────────── -->
+<div class="newbook-overlay" id="bookedit-overlay" onclick="if(event.target===this)closeBookEdit()">
+  <div class="newbook-card" style="max-width:380px;width:100%">
+    <button class="detail-close" onclick="closeBookEdit()">×</button>
+    <div class="form-title" id="bookedit-title">编辑词书</div>
+    <div class="form-group" style="margin-top:16px">
+      <label class="form-label" id="bookedit-label">词书名称</label>
+      <input class="form-input" id="bookedit-name" maxlength="30"
+             onkeydown="if(event.key==='Enter')saveBookEdit()">
+    </div>
+    <div class="form-actions" style="margin-top:16px">
+      <button class="btn-cancel" id="bookedit-delete-btn" onclick="deleteBookOrLesson()" style="color:var(--rose);border-color:var(--rose)">删除</button>
+      <div style="flex:1"></div>
+      <button class="btn-cancel" onclick="closeBookEdit()">取消</button>
+      <button class="btn-save" onclick="saveBookEdit()">保存</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── LESSON PICKER OVERLAY ─────────────────────────────── -->
+<div class="newbook-overlay" id="lesson-picker-overlay">
+  <div class="newbook-card" style="max-width:420px;width:100%">
+    <button class="detail-close" onclick="closeLessonPicker()">×</button>
+    <div class="form-title" id="lesson-picker-title">选择导入目标</div>
+    <p style="font-size:12px;color:var(--text-muted);margin-bottom:16px;font-family:'DM Mono',monospace">请选择词书和课次，新词汇将归入所选课次</p>
+
+    <!-- Book single-select -->
+    <div class="form-label" style="margin-bottom:8px">词书</div>
+    <div class="lesson-chips" id="lp-book-chips" style="margin-bottom:16px"></div>
+
+    <!-- Lesson single-select -->
+    <div class="form-label" style="margin-bottom:8px" id="lp-lesson-label">课次</div>
+    <div class="lesson-chips" id="lp-lesson-chips" style="margin-bottom:4px"></div>
+    <div style="margin-top:8px">
+      <input class="form-input" id="lp-new-lesson" placeholder="或输入新课次，如 p.12"
+             style="font-size:12px;padding:7px 10px"
+             oninput="renderLPLessonChips()">
+    </div>
+
+    <div class="form-actions" style="margin-top:20px">
+      <button class="btn-cancel" onclick="closeLessonPicker()">取消</button>
+      <button class="btn-save" id="lp-confirm-btn" onclick="confirmLessonPicker()">确认</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── GITHUB SYNC OVERLAY ───────────────────────────────── -->
+<div class="newbook-overlay" id="ghsync-overlay" onclick="if(event.target===this)closeGithubSync()">
+  <div class="newbook-card" style="max-width:420px;width:100%">
+    <button class="detail-close" onclick="closeGithubSync()">×</button>
+    <div class="form-title">☁ 同步词库到 GitHub</div>
+    <p style="font-size:12px;color:var(--text-muted);margin:8px 0 16px;font-family:'DM Mono',monospace;line-height:1.7">
+      将当前全部词汇上传到 GitHub，手机端刷新后自动同步。
+    </p>
+    <div class="form-group" style="margin-bottom:12px">
+      <label class="form-label">GitHub Personal Access Token</label>
+      <input class="form-input" id="gh-token-input" type="password"
+             placeholder="ghp_xxxxxxxxxxxx"
+             style="font-family:'DM Mono',monospace;font-size:12px">
+      <div style="margin-top:6px;font-size:11px;color:var(--text-muted);font-family:'DM Mono',monospace">
+        Token 仅存本地，不会上传。
+        <a href="https://github.com/settings/tokens/new?scopes=repo&description=Mansour+Sync"
+           target="_blank" style="color:var(--teal)">点此生成 Token ↗</a>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);margin-bottom:16px;cursor:pointer">
+      <input type="checkbox" id="gh-save-token" checked style="accent-color:var(--teal)">
+      记住 Token（存在本地）
+    </label>
+    <div id="gh-sync-status" style="font-size:12px;font-family:'DM Mono',monospace;min-height:18px;margin-bottom:12px"></div>
+    <div class="form-actions">
+      <button class="btn-cancel" onclick="closeGithubSync()">取消</button>
+      <button class="btn-save" id="gh-sync-btn" onclick="doGithubSync()">上传词库</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── TIRED OVERLAY ──────────────────────────────────────── -->
+<div class="tired-overlay" id="tired-overlay" onclick="closeTired(event)">
+  <div class="tired-card">
+    <button class="detail-close" onclick="document.getElementById('tired-overlay').classList.remove('open')">×</button>
+    <div class="tired-body">
+      <p>嗨，小伙伴们大家好吖！欢迎来到 <span class="tired-name">منصور</span> 的世界。</p>
+      <p>为什么叫这个名字？在阿拉伯语里，<span class="tired-name">منصور</span> 意为"被帮助的获胜者"。学阿语的路不容易，起这个名字，就是希望它能成为你身边那份小小的"帮助"，陪你翻过动词变位的大山，熬过背了又忘的瓶颈。在你记不住词根的时候帮你理一理，在你分不清词型的时候陪你练一练。希望它能成为你的工具，也成为你的一点点底气。</p>
+      <p>等有一天，你能流畅地读出一篇文章，能听懂一段新闻，能和人用阿语自如地聊天——那时候你会发现，你已经成了那个 "被帮助的、获得了胜利的人"。</p>
+      <p>这条路虽然辛苦，但头顶的星空真的很美。</p>
+      <p>愿你们在每一个早起背单词的清晨，都不觉得孤单。<br>愿你们的路，通向那片辽阔的光明。</p>
+      <p class="tired-sign">加油噢！</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ── NEW BOOK OVERLAY ──────────────────────────────────── -->
+<div class="newbook-overlay" id="newbook-overlay">
+  <div class="newbook-card">
+    <button class="detail-close" onclick="closeNewBook()">×</button>
+    <div class="form-title">新建课本</div>
+    <div class="form-group" style="margin-top:16px">
+      <label class="form-label">课本名称</label>
+      <input class="form-input" id="newbook-name" placeholder="例如：第三册、进阶词汇…" maxlength="30"
+             onkeydown="if(event.key==='Enter')saveNewBook()">
+    </div>
+    <div class="form-actions" style="margin-top:20px">
+      <button class="btn-cancel" onclick="closeNewBook()">取消</button>
+      <button class="btn-save" onclick="saveNewBook()">创建</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── IMPORT OVERLAY ────────────────────────────────────── -->
+<div class="import-overlay" id="import-overlay">
+  <div class="import-card">
+    <button class="detail-close" onclick="closeImport()">×</button>
+    <div class="form-title">AI 批量导入词汇</div>
+    <p class="import-desc">上传纸质教材扫描图片或 Excel 文件，AI 自动识别阿拉伯语词汇、汉语含义、词形变化，并生成词根。</p>
+
+    <!-- Upload area -->
+    <div class="import-drop" id="import-drop" onclick="document.getElementById('import-file').click()">
+      <div class="import-drop-icon">📂</div>
+      <div class="import-drop-text">点击上传或拖入文件</div>
+      <div class="import-drop-sub">支持 JPG / PNG / PDF 扫描图 · Excel (.xlsx)</div>
+      <input type="file" id="import-file" accept="image/*,.xlsx,.xls,.pdf" style="display:none" onchange="handleImportFile(event)">
+    </div>
+    <div class="import-file-name" id="import-file-name"></div>
+
+    <!-- Extract button -->
+    <button class="import-run-btn" id="import-run-btn" onclick="runImport()" disabled>🤖 AI 识别并提取词汇</button>
+
+    <!-- Progress -->
+    <div class="import-status" id="import-status"></div>
+
+    <!-- Preview table -->
+    <div id="import-preview" style="display:none">
+      <div class="import-preview-header">
+        <span id="import-preview-count"></span>
+        <label style="font-size:12px;color:var(--text-dim);cursor:pointer">
+          <input type="checkbox" id="import-select-all" onchange="toggleSelectAll(this.checked)" checked> 全选
+        </label>
+      </div>
+      <div class="import-table-wrap">
+        <table class="import-table" id="import-table">
+          <thead><tr>
+            <th>✓</th><th>阿拉伯语</th><th>词形/复数</th><th>中文释义</th><th>词根</th>
+          </tr></thead>
+          <tbody id="import-tbody"></tbody>
+        </table>
+      </div>
+      <div class="import-actions">
+        <button class="btn-cancel" onclick="closeImport()">取消</button>
+        <button class="btn-save" onclick="confirmImport()">导入选中词汇</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── TOAST ─────────────────────────────────────────────── -->
+<div class="toast" id="toast"></div>
+
+<script>
+/* ─────────────────────────────────────────────────────────
+   DATA STORE
+───────────────────────────────────────────────────────── */
+let progress = {};
+let streak = 0;
+
+// ── Books ─────────────────────────────────────────────────
+let books = [{ id: 'book_2', name: '第二册' }, { id: 'book_kurd', name: '库尔德语' }];
+let currentBookId = 'book_2';
+// Set of "bookId::unit" strings — the scope for study sessions
+let selectedLessons = new Set();
+// Trash bin for soft-deleted words
+let trash = [];
+// Currently selected word IDs in library lesson view
+let libSelectedIds = new Set();
+
+// ── Seed from textbook (always defined as default) ────────
+let words = (function() {
+  const seed = [
+    // ── 第4页 旅行主题 ──────────────────────────────────────
+    { id:1,  arabic:'رِحْلَةٌ',         plain:'رحلة',      zh:'旅行',              en:'trip, journey',      pos:'名词',  diff:2, root:'ر ح ل', morph:'رِحَلاتٌ',          unit:'p.4', notes:'جـ رِحَلاتٌ', bookId:'book_2' },
+    { id:2,  arabic:'عُطْلَةٌ',         plain:'عطلة',      zh:'假期，假日',        en:'holiday, vacation',  pos:'名词',  diff:2, root:'ع ط ل', morph:'',                  unit:'p.4', notes:'也作 إِجَازَةٌ', bookId:'book_2' },
+    { id:3,  arabic:'إِجَازَةٌ',        plain:'إجازة',     zh:'假期，假日',        en:'holiday, leave',     pos:'名词',  diff:2, root:'ج و ز', morph:'',                  unit:'p.4', notes:'', bookId:'book_2' },
+    { id:4,  arabic:'شَتَوِيٌّ',        plain:'شتوي',      zh:'冬季的，冬天的',    en:'winter (adj.)',       pos:'形容词',diff:2, root:'ش ت و', morph:'',                  unit:'p.4', notes:'', bookId:'book_2' },
+    { id:5,  arabic:'خُطَّةٌ',          plain:'خطة',       zh:'计划，路线',        en:'plan, route',        pos:'名词',  diff:2, root:'خ ط ط', morph:'خُطَطٌ',            unit:'p.4', notes:'جـ خُطَطٌ', bookId:'book_2' },
+    { id:6,  arabic:'فِكْرَةٌ',         plain:'فكرة',      zh:'想法，念头',        en:'idea, thought',      pos:'名词',  diff:1, root:'ف ك ر', morph:'أَفْكَارٌ',         unit:'p.4', notes:'جـ أَفْكَارٌ', bookId:'book_2' },
+    { id:7,  arabic:'سَاحِلِيٌّ',       plain:'ساحلي',     zh:'海岸的，海边的，海滨的',    en:'coastal',            pos:'形容词',diff:2, root:'س ح ل', morph:'',                  unit:'p.4', notes:'', bookId:'book_2' },
+    { id:8,  arabic:'سَاحِلٌ',          plain:'ساحل',      zh:'海岸，海边',        en:'coast, shore',       pos:'名词',  diff:2, root:'س ح ل', morph:'سَوَاحِلٌ',         unit:'p.4', notes:'جـ سَوَاحِلٌ', bookId:'book_2' },
+    { id:9,  arabic:'اِسْتَحَقَّ',      plain:'استحق',     zh:'值得，堪当',        en:'to deserve',         pos:'动词',  diff:3, root:'ح ق ق', morph:'يَسْتَحِقُّ',       unit:'p.4', notes:'اِسْتَحَقَّ يَسْتَحِقُّ', bookId:'book_2' },
+    { id:10, arabic:'مَعَالِمُ الْمَدِينَةِ', plain:'معالم المدينة', zh:'市容，城市的面貌', en:'city landmarks', pos:'名词',diff:3, root:'ع ل م', morph:'', unit:'p.4', notes:'', bookId:'book_2' },
+    { id:11, arabic:'أَثَرٌ',           plain:'أثر',       zh:'古迹；痕迹；影响',  en:'trace, monument',    pos:'名词',  diff:2, root:'أ ث ر', morph:'آثَارٌ',            unit:'p.4', notes:'جـ آثَارٌ', bookId:'book_2' },
+    { id:12, arabic:'أَثَرِيٌّ',        plain:'أثري',      zh:'古迹的，文物的',    en:'archaeological',     pos:'形容词',diff:3, root:'أ ث ر', morph:'',                  unit:'p.4', notes:'', bookId:'book_2' },
+    { id:13, arabic:'سِيَاحِيٌّ',       plain:'سياحي',     zh:'旅游的',            en:'tourist (adj.)',      pos:'形容词',diff:2, root:'س ي ح', morph:'',                  unit:'p.4', notes:'', bookId:'book_2' },
+    { id:14, arabic:'زِرَاعِيٌّ',       plain:'زراعي',     zh:'农业的',            en:'agricultural',       pos:'形容词',diff:2, root:'ز ر ع', morph:'',                  unit:'p.4', notes:'', bookId:'book_2' },
+    { id:15, arabic:'اِسْتَغْرَقَ',     plain:'استغرق',    zh:'占用时间，历时',    en:'to take (time)',      pos:'动词',  diff:3, root:'غ ر ق', morph:'يَسْتَغْرِقُ',      unit:'p.4', notes:'اِسْتَغْرَقَ يَسْتَغْرِقُ', bookId:'book_2' },
+    { id:16, arabic:'تَقْرِيبًا',       plain:'تقريبا',    zh:'大约，大概，大致',  en:'approximately',       pos:'副词',  diff:1, root:'ق ر ب', morph:'',                  unit:'p.4', notes:'', bookId:'book_2' },
+    { id:17, arabic:'بِالْإِضَافَةِ إِلَى ذَلِكَ', plain:'بالإضافة إلى ذلك', zh:'除此之外，此外', en:'in addition to that', pos:'短语', diff:2, root:'ض ي ف', morph:'', unit:'p.4', notes:'', bookId:'book_2' },
+    { id:18, arabic:'مُمَهَّدٌ',        plain:'ممهد',      zh:'铺平的；平坦的；准备就绪的', en:'paved, ready', pos:'形容词',diff:3, root:'م ه د', morph:'',             unit:'p.4', notes:'', bookId:'book_2' },
+    { id:19, arabic:'حَتَّى',           plain:'حتى',       zh:'以便；直到',        en:'until, so that',     pos:'连词',  diff:1, root:'',      morph:'',                  unit:'p.4,p.27', notes:'', bookId:'book_2' },
+    { id:20, arabic:'شَعَرَ',           plain:'شعر',       zh:'感觉，觉得，感到',  en:'to feel',            pos:'动词',  diff:2, root:'ش ع ر', morph:'يَشْعُرُ',          unit:'p.4', notes:'شَعَرَ يَشْعُرُ شُعُورًا بِهِ', bookId:'book_2' },
+    { id:21, arabic:'كَامِيرَا',        plain:'كاميرا',    zh:'照相机',            en:'camera',             pos:'名词',  diff:1, root:'',      morph:'كَامِيرَاتٌ',       unit:'p.4', notes:'جـ كَامِيرَاتٌ', bookId:'book_2' },
+    { id:22, arabic:'كَافٍ',            plain:'كافي',      zh:'足够的，充足的，充分的', en:'sufficient',    pos:'形容词',diff:2, root:'ك ف ي', morph:'',                  unit:'p.4', notes:'الْكَافِي', bookId:'book_2' },
+    { id:23, arabic:'لَا شَكَّ فِي',   plain:'لا شك في',  zh:'毫无疑义，无疑',    en:'no doubt',           pos:'短语',  diff:2, root:'ش ك ك', morph:'',                  unit:'p.4', notes:'', bookId:'book_2' },
+    { id:24, arabic:'تَحَوَّلَ',        plain:'تحول',      zh:'漫步，游逛，转悠',  en:'to stroll, to wander', pos:'动词',diff:3, root:'ح و ل', morph:'يَتَحَوَّلُ',      unit:'p.4', notes:'تَحَوَّلَ يَتَحَوَّلُ تَحَوُّلاً', bookId:'book_2' },
+    { id:25, arabic:'مَنَارَةٌ',        plain:'منارة',     zh:'灯塔',              en:'lighthouse, minaret', pos:'名词',  diff:2, root:'ن و ر', morph:'مَنَارَاتٌ',        unit:'p.4', notes:'جـ مَنَارَاتٌ', bookId:'book_2' },
+    // ── 第5页 旅行主题（续）────────────────────────────────
+    { id:26, arabic:'مَعَ الْأَسَفِ الشَّدِيدِ', plain:'مع الأسف الشديد', zh:'非常遗憾', en:'unfortunately', pos:'短语', diff:2, root:'أ س ف', morph:'', unit:'p.5', notes:'', bookId:'book_2' },
+    { id:27, arabic:'اِنْهَدَمَ',       plain:'انهدم',     zh:'倒塌，被毁坏',      en:'to collapse',        pos:'动词',  diff:3, root:'ه د م', morph:'يَنْهَدِمُ',        unit:'p.5', notes:'اِنْهَدَمَ يَنْهَدِمُ اِنْهِدَامًا', bookId:'book_2' },
+    { id:28, arabic:'مُنْذُ',           plain:'منذ',       zh:'自从，自……以来',   en:'since, for',         pos:'介词',  diff:1, root:'',      morph:'',                  unit:'p.5', notes:'', bookId:'book_2' },
+    { id:29, arabic:'لَكِنْ',           plain:'لكن',       zh:'但是',              en:'but, however',       pos:'连词',  diff:1, root:'',      morph:'',                  unit:'p.5', notes:'也作 لَكِنَّ', bookId:'book_2' },
+    { id:30, arabic:'حَفْلَةُ زَفَافٍ', plain:'حفلة زفاف', zh:'婚礼',             en:'wedding ceremony',   pos:'名词',  diff:2, root:'ز ف ف', morph:'',                  unit:'p.5', notes:'', bookId:'book_2' },
+    { id:31, arabic:'لَبَّى',           plain:'لبى',       zh:'应邀，响应（号召）',en:'to respond, to answer', pos:'动词',diff:2, root:'ل ب ي', morph:'يُلَبِّي',         unit:'p.5', notes:'لَبَّى يُلَبِّي تَلْبِيَةَ الدَّعْوَةَ', bookId:'book_2' },
+    { id:32, arabic:'تَلْبِيَةً لـ',   plain:'تلبية ل',   zh:'应……邀请',          en:'in response to',     pos:'短语',  diff:3, root:'ل ب ي', morph:'',                  unit:'p.5', notes:'', bookId:'book_2' },
+    { id:33, arabic:'عَيْنٌ',           plain:'عين',       zh:'眼睛；泉眼',        en:'eye; spring',        pos:'名词',  diff:1, root:'ع ي ن', morph:'عُيُونٌ وَأَعْيُنٌ', unit:'p.5', notes:'جـ عُيُونٌ وَأَعْيُنٌ', bookId:'book_2' },
+    { id:34, arabic:'اِسْتَطَاعَ',     plain:'استطاع',    zh:'能做，能够',        en:'to be able to',      pos:'动词',  diff:2, root:'ط و ع', morph:'يَسْتَطِيعُ',       unit:'p.5', notes:'اِسْتَطَاعَ يَسْتَطِيعُ', bookId:'book_2' },
+    { id:35, arabic:'آسَفَهُ الْأَمْرُ', plain:'آسفه الأمر', zh:'令人遗憾，使人难过', en:'to sadden',       pos:'动词',  diff:3, root:'أ س ف', morph:'يُؤْسِفُ',          unit:'p.5', notes:'', bookId:'book_2' },
+    { id:36, arabic:'فَاتَتْهُ الْفُرْصَةُ', plain:'فاتته الفرصة', zh:'错过机会，失去良机', en:'to miss the opportunity', pos:'动词', diff:3, root:'ف و ت', morph:'تَفُوتُ', unit:'p.5', notes:'', bookId:'book_2' },
+    { id:37, arabic:'وَقْتٌ',           plain:'وقت',       zh:'时间，时光',        en:'time',               pos:'名词',  diff:1, root:'و ق ت', morph:'أَوْقَاتٌ',         unit:'p.5', notes:'جـ أَوْقَاتٌ', bookId:'book_2' },
+    { id:38, arabic:'بَعِيدٌ',          plain:'بعيد',      zh:'远的，远方的，遥远的', en:'far, distant',    pos:'形容词',diff:1, root:'ب ع د', morph:'',                  unit:'p.5', notes:'', bookId:'book_2' },
+    { id:39, arabic:'آسِيَا',           plain:'آسيا',      zh:'亚洲',              en:'Asia',               pos:'名词',  diff:1, root:'',      morph:'',                  unit:'p.5', notes:'专有名词', bookId:'book_2' },
+    { id:40, arabic:'إِفْرِيقِيَا',    plain:'إفريقيا',   zh:'非洲',              en:'Africa',             pos:'名词',  diff:1, root:'',      morph:'',                  unit:'p.5', notes:'专有名词', bookId:'book_2' },
+    { id:41, arabic:'أُورُبَّا',        plain:'أوروبا',    zh:'欧洲',              en:'Europe',             pos:'名词',  diff:1, root:'',      morph:'',                  unit:'p.5', notes:'专有名词', bookId:'book_2' },
+    { id:42, arabic:'أَمْرِيكَا',       plain:'أمريكا',    zh:'美洲；美国',        en:'America',            pos:'名词',  diff:1, root:'',      morph:'',                  unit:'p.5', notes:'专有名词', bookId:'book_2' },
+    { id:43, arabic:'أُسْتَرَالِيَا',  plain:'أستراليا',  zh:'澳洲，澳大利亚',    en:'Australia',          pos:'名词',  diff:1, root:'',      morph:'',                  unit:'p.5', notes:'专有名词', bookId:'book_2' },
+    { id:44, arabic:'قَارَّةٌ',         plain:'قارة',      zh:'洲，大陆',          en:'continent',          pos:'名词',  diff:2, root:'ق ر ر', morph:'قَارَّاتٌ',         unit:'p.5', notes:'جـ قَارَّاتٌ', bookId:'book_2' },
+    { id:45, arabic:'قُطْبٌ',           plain:'قطب',       zh:'轴，轴心，极',      en:'pole, axis',         pos:'名词',  diff:3, root:'ق ط ب', morph:'أَقْطَابٌ',         unit:'p.5', notes:'جـ أَقْطَابٌ', bookId:'book_2' },
+    { id:46, arabic:'أُمَّةٌ',          plain:'أمة',       zh:'民族',              en:'nation, people',     pos:'名词',  diff:2, root:'أ م م', morph:'أُمَمٌ',            unit:'p.5', notes:'جـ أُمَمٌ', bookId:'book_2' },
+    { id:47, arabic:'بَرٌّ',            plain:'بر',        zh:'陆地',              en:'land, continent',    pos:'名词',  diff:2, root:'ب ر ر', morph:'',                  unit:'p.5', notes:'', bookId:'book_2' },
+    { id:48, arabic:'بَحْرٌ',           plain:'بحر',       zh:'海，海洋',          en:'sea, ocean',         pos:'名词',  diff:1, root:'ب ح ر', morph:'بِحَارٌ وَأَبْحُرٌ', unit:'p.5', notes:'جـ بِحَارٌ وَأَبْحُرٌ', bookId:'book_2' },
+    { id:49, arabic:'مُتْعَةٌ',         plain:'متعة',      zh:'乐趣，快感',        en:'pleasure, enjoyment', pos:'名词', diff:2, root:'م ت ع', morph:'مُتَعٌ',            unit:'p.5', notes:'جـ مُتَعٌ', bookId:'book_2' },
+    { id:50, arabic:'قِطَارٌ',          plain:'قطار',      zh:'火车，列车',        en:'train',              pos:'名词',  diff:1, root:'ق ط ر', morph:'قِطَارَاتٌ وَقُطُرٌ', unit:'p.5', notes:'جـ قِطَارَاتٌ', bookId:'book_2' },
+    { id:51, arabic:'ثَلْجٌ',           plain:'ثلج',       zh:'雪',                en:'snow',               pos:'名词',  diff:1, root:'ث ل ج', morph:'ثُلُوجٌ',           unit:'p.5', notes:'جـ ثُلُوجٌ', bookId:'book_2' },
+    { id:52, arabic:'سَفِينَةٌ',        plain:'سفينة',     zh:'船，舰，船只',      en:'ship, vessel',       pos:'名词',  diff:1, root:'س ف ن', morph:'سُفُنٌ',            unit:'p.5', notes:'جـ سُفُنٌ', bookId:'book_2' },
+    { id:53, arabic:'نَهْرٌ',           plain:'نهر',       zh:'江，河，河流',      en:'river',              pos:'名词',  diff:1, root:'ن ه ر', morph:'أَنْهَارٌ',         unit:'p.5', notes:'جـ أَنْهَارٌ', bookId:'book_2' },
+    // ── 第6页 ────────────────────────────────────────────────
+    { id:54, arabic:'عَالٍ',            plain:'عال',       zh:'高的，崇高的',      en:'high, lofty',        pos:'形容词',diff:2, root:'ع ل و', morph:'',                  unit:'p.6', notes:'الْعَالِي', bookId:'book_2' },
+    { id:55, arabic:'سَطْحٌ',           plain:'سطح',       zh:'表面，平面；房顶',  en:'surface, roof',      pos:'名词',  diff:2, root:'س ط ح', morph:'سُطُوحٌ',           unit:'p.6', notes:'جـ سُطُوحٌ', bookId:'book_2' },
+    { id:56, arabic:'شِرَاعِيَّةٌ',    plain:'شراعية',    zh:'帆船',              en:'sailboat',           pos:'名词',  diff:3, root:'ش ر ع', morph:'شِرَاعِيَّاتٌ',     unit:'p.6', notes:'', bookId:'book_2' },
+    { id:57, arabic:'مَتْنٌ',           plain:'متن',       zh:'背，脊背',          en:'back, spine',        pos:'名词',  diff:3, root:'م ت ن', morph:'مُتُونٌ',           unit:'p.6', notes:'جـ مُتُونٌ', bookId:'book_2' },
+    { id:58, arabic:'عَلَى مَتْنِ الطَّائِرَةِ', plain:'على متن الطائرة', zh:'在飞机（或船）上，乘飞机（或船）', en:'on board the plane/ship', pos:'短语', diff:2, root:'م ت ن', morph:'', unit:'p.6', notes:'', bookId:'book_2' },
+    { id:59, arabic:'حُدُودٌ',          plain:'حدود',      zh:'边界，国境；限度，界限', en:'borders, limits', pos:'名词',diff:2, root:'ح د د', morph:'',                  unit:'p.6', notes:'جـ حُدُودٌ الْبِلَادِ', bookId:'book_2' },
+    { id:60, arabic:'تَقْلِيدٌ',        plain:'تقليد',     zh:'传统，习惯',        en:'tradition, custom',  pos:'名词',  diff:2, root:'ق ل د', morph:'تَقَالِيدُ',        unit:'p.6', notes:'جـ تَقَالِيدُ', bookId:'book_2' },
+    { id:61, arabic:'طَبِيعَةٌ',        plain:'طبيعة',     zh:'自然；本性',        en:'nature',             pos:'名词',  diff:1, root:'ط ب ع', morph:'',                  unit:'p.6', notes:'', bookId:'book_2' },
+    { id:62, arabic:'قَوَّى',           plain:'قوى',       zh:'加强，巩固',        en:'to strengthen',      pos:'动词',  diff:2, root:'ق و ي', morph:'يُقَوِّي',          unit:'p.6', notes:'قَوَّى يُقَوِّي تَقْوِيَةَ الشَّيْءَ', bookId:'book_2' },
+    { id:63, arabic:'جِسْمٌ',           plain:'جسم',       zh:'身体，躯体',        en:'body',               pos:'名词',  diff:1, root:'ج س م', morph:'أَجْسَامٌ',         unit:'p.6', notes:'جـ أَجْسَامٌ', bookId:'book_2' },
+    { id:64, arabic:'صَفَّى',           plain:'صفى',       zh:'澄清，过滤，提炼；清除', en:'to purify, to filter', pos:'动词', diff:3, root:'ص ف و', morph:'يُصَفِّي', unit:'p.6', notes:'صَفَّى يُصَفِّي تَصْفِيَةَ الشَّيْءَ', bookId:'book_2' },
+    { id:65, arabic:'رُوحٌ',            plain:'روح',       zh:'精神，灵魂，生命',  en:'spirit, soul',       pos:'名词',  diff:2, root:'ر و ح', morph:'أَرْوَاحٌ',         unit:'p.6', notes:'جـ أَرْوَاحٌ', bookId:'book_2' },
+    // ── 第24页 ───────────────────────────────────────────────
+    { id:66, arabic:'عَمَّةٌ',          plain:'عمة',       zh:'姑，姑妈，姑母',    en:'paternal aunt',      pos:'名词',  diff:1, root:'ع م م', morph:'عَمَّاتٌ',          unit:'p.24', notes:'أُخْتُ الْأَبِ', bookId:'book_2' },
+    { id:67, arabic:'رَحْمَةُ اللهِ',  plain:'رحمة الله', zh:'天恩，安拉的慈恩',  en:"God's mercy",        pos:'名词',  diff:2, root:'ر ح م', morph:'',                  unit:'p.24', notes:'', bookId:'book_2' },
+    { id:68, arabic:'بَرَكَةٌ',         plain:'بركة',      zh:'吉祥，祝福',        en:'blessing',           pos:'名词',  diff:2, root:'ب ر ك', morph:'بَرَكَاتٌ',         unit:'p.24', notes:'جـ بَرَكَاتٌ', bookId:'book_2' },
+    { id:69, arabic:'صَعِدَ',           plain:'صعد',       zh:'上楼梯，爬山，登山',en:'to climb, to ascend', pos:'动词', diff:2, root:'ص ع د', morph:'يَصْعَدُ',          unit:'p.24', notes:'صَعِدَ يَصْعَدُ صُعُودًا', bookId:'book_2' },
+    { id:70, arabic:'سُلَّمٌ',          plain:'سلم',       zh:'梯子，阶梯',        en:'ladder, stairs',     pos:'名词',  diff:2, root:'س ل م', morph:'سَلَالِمُ',         unit:'p.24', notes:'جـ سَلَالِمُ', bookId:'book_2' },
+    { id:71, arabic:'خَالٌ',            plain:'خال',       zh:'舅舅',              en:'maternal uncle',     pos:'名词',  diff:1, root:'خ و ل', morph:'أَخْوَالٌ',         unit:'p.24', notes:'أَخُو الْأُمِّ', bookId:'book_2' },
+    { id:72, arabic:'اِشْتَاقَ',        plain:'اشتاق',     zh:'想念，怀念，渴望',  en:'to miss, to long for', pos:'动词', diff:3, root:'ش و ق', morph:'يَشْتَاقُ',        unit:'p.24,p.26', notes:'اِشْتَاقَ يَشْتَاقُ اِشْتِيَاقًا إِلَى', bookId:'book_2' },
+    { id:73, arabic:'فَتْرَةٌ',         plain:'فترة',      zh:'一段时间，时期，阶段', en:'period, phase',    pos:'名词',  diff:2, root:'ف ت ر', morph:'فَتَرَاتٌ',         unit:'p.24', notes:'جـ فَتَرَاتٌ', bookId:'book_2' },
+    { id:74, arabic:'وَلَدٌ',           plain:'ولد',       zh:'小孩，孩子，子女；男孩', en:'child, boy',     pos:'名词',  diff:1, root:'و ل د', morph:'أَوْلَادٌ',         unit:'p.24', notes:'جـ أَوْلَادٌ', bookId:'book_2' },
+    { id:75, arabic:'قَبَّلَ',          plain:'قبل',       zh:'接吻，亲吻',        en:'to kiss',            pos:'动词',  diff:2, root:'ق ب ل', morph:'يُقَبِّلُ',         unit:'p.24', notes:'قَبَّلَهُ يُقَبِّلُ تَقْبِيلاً', bookId:'book_2' },
+    { id:76, arabic:'يَدٌ',             plain:'يد',        zh:'手',                en:'hand',               pos:'名词',  diff:1, root:'ي د ي', morph:'أَيْدٍ',            unit:'p.24', notes:'جـ أَيْدٍ', bookId:'book_2' },
+    { id:77, arabic:'طَرَفٌ',           plain:'طرف',       zh:'端；方面；肢体',    en:'end, side, limb',    pos:'名词',  diff:2, root:'ط ر ف', morph:'أَطْرَافٌ',         unit:'p.24', notes:'جـ أَطْرَافٌ', bookId:'book_2' },
+    { id:78, arabic:'جَاهِزٌ',          plain:'جاهز',      zh:'预备好的，现成的',  en:'ready, prepared',    pos:'形容词',diff:1, root:'ج ه ز', morph:'',                  unit:'p.24', notes:'', bookId:'book_2' },
+    { id:79, arabic:'رَأْسٌ',           plain:'رأس',       zh:'头；顶端',          en:'head, top',          pos:'名词',  diff:1, root:'ر أ س', morph:'رُؤُوسٌ',           unit:'p.24', notes:'جـ رُؤُوسٌ', bookId:'book_2' },
+    { id:80, arabic:'قَدَّمَ',          plain:'قدم',       zh:'提供，提出，呈递，交给', en:'to offer, to present', pos:'动词', diff:2, root:'ق د م', morph:'يُقَدِّمُ',    unit:'p.24', notes:'قَدَّمَ يُقَدِّمُ تَقْدِيمًا الشَّيْءَ', bookId:'book_2' },
+    { id:81, arabic:'شَرَابٌ',          plain:'شراب',      zh:'饮料，果子露；喝的',en:'drink, beverage',    pos:'名词',  diff:2, root:'ش ر ب', morph:'أَشْرِبَةٌ وَشَرَابَاتٌ', unit:'p.24', notes:'جـ أَشْرِبَةٌ', bookId:'book_2' },
+    { id:82, arabic:'خَدَمَ',           plain:'خدم',       zh:'服务，服侍，效劳',  en:'to serve',           pos:'动词',  diff:2, root:'خ د م', morph:'يَخْدُمُ',          unit:'p.24', notes:'خَدَمَهُ يَخْدُمُ خِدْمَةً', bookId:'book_2' },
+    { id:83, arabic:'لَوْنٌ',           plain:'لون',       zh:'颜色；种类',        en:'color, type',        pos:'名词',  diff:1, root:'ل و ن', morph:'أَلْوَانٌ',         unit:'p.24', notes:'جـ أَلْوَانٌ', bookId:'book_2' },
+    { id:84, arabic:'ذَاقَ',            plain:'ذاق',       zh:'尝，品尝',          en:'to taste',           pos:'动词',  diff:2, root:'ذ و ق', morph:'يَذُوقُ',           unit:'p.24', notes:'ذَاقَ يَذُوقُ ذَوْقًا', bookId:'book_2' },
+    { id:85, arabic:'مَشْوِيٌّ',        plain:'مشوي',      zh:'烤的，烤熟的',      en:'grilled, roasted',   pos:'形容词',diff:2, root:'ش و ي', morph:'',                  unit:'p.24', notes:'', bookId:'book_2' },
+    { id:86, arabic:'طَعْمٌ',           plain:'طعم',       zh:'味道，滋味',        en:'taste, flavor',      pos:'名词',  diff:2, root:'ط ع م', morph:'طُعُومٌ',           unit:'p.24', notes:'جـ طُعُومٌ', bookId:'book_2' },
+    { id:87, arabic:'قِطْعَةٌ',         plain:'قطعة',      zh:'块，段，截',        en:'piece, slice',       pos:'名词',  diff:2, root:'ق ط ع', morph:'قِطَعٌ',            unit:'p.24', notes:'جـ قِطَعٌ', bookId:'book_2' },
+    { id:88, arabic:'شَبِعَ',           plain:'شبع',       zh:'吃饱',              en:'to be full, to eat one\'s fill', pos:'动词', diff:2, root:'ش ب ع', morph:'يَشْبَعُ', unit:'p.24', notes:'شَبِعَ يَشْبَعُ شِبَعًا مِنَ الطَّعَامِ', bookId:'book_2' },
+    { id:89, arabic:'مِقْدَارٌ',        plain:'مقدار',     zh:'数量，分量，程度',  en:'amount, measure',    pos:'名词',  diff:3, root:'ق د ر', morph:'مَقَادِيرُ',        unit:'p.24', notes:'جـ مَقَادِيرُ', bookId:'book_2' },
+    { id:90, arabic:'طَاقَةٌ',          plain:'طاقة',      zh:'能力，能量',        en:'energy, capacity',   pos:'名词',  diff:2, root:'ط و ق', morph:'طَاقَاتٌ',         unit:'p.24', notes:'جـ طَاقَاتٌ', bookId:'book_2' },
+    // ── 第25页 ───────────────────────────────────────────────
+    { id:91, arabic:'عُصْفُورٌ',        plain:'عصفور',     zh:'小鸟，麻雀',        en:'sparrow, small bird', pos:'名词', diff:2, root:'ع ص ف', morph:'عَصَافِيرُ',        unit:'p.25', notes:'جـ عَصَافِيرُ', bookId:'book_2' },
+    { id:92, arabic:'سَلِمَ',           plain:'سلم',       zh:'完好，安全，平安',  en:'to be safe and sound', pos:'动词', diff:2, root:'س ل م', morph:'يَسْلَمُ',         unit:'p.25', notes:'سَلِمَ يَسْلَمُ سَلَامَةً', bookId:'book_2' },
+    { id:93, arabic:'عَفَا',            plain:'عفا',       zh:'原谅，宽恕',        en:'to forgive, to pardon', pos:'动词', diff:2, root:'ع ف و', morph:'يَعْفُو',          unit:'p.25', notes:'عَفَا يَعْفُو عَفْوًا عَنْهُ', bookId:'book_2' },
+    { id:94, arabic:'ضِيَافَةٌ',        plain:'ضيافة',     zh:'招待，款待',        en:'hospitality',        pos:'名词',  diff:2, root:'ض ي ف', morph:'',                  unit:'p.25', notes:'', bookId:'book_2' },
+    { id:95, arabic:'حَفَاوَةٌ',        plain:'حفاوة',     zh:'款待，盛情',        en:'warm hospitality',   pos:'名词',  diff:3, root:'ح ف و', morph:'',                  unit:'p.25', notes:'', bookId:'book_2' },
+    { id:96, arabic:'وَحْدَةٌ',         plain:'وحدة',      zh:'单位；统一，团结',  en:'unit; unity',        pos:'名词',  diff:2, root:'و ح د', morph:'وَحَدَاتٌ',         unit:'p.25', notes:'جـ وَحَدَاتٌ', bookId:'book_2' },
+    { id:97, arabic:'أَسَاسِيٌّ',       plain:'أساسي',     zh:'基本的，根本的，主要的', en:'basic, fundamental', pos:'形容词',diff:2, root:'أ س س', morph:'',             unit:'p.25', notes:'', bookId:'book_2' },
+    { id:98, arabic:'بَنَى',            plain:'بنى',       zh:'建设，建造',        en:'to build, to construct', pos:'动词', diff:2, root:'ب ن ي', morph:'يَبْنِي',         unit:'p.25', notes:'بَنَى يَبْنِي بِنَاءً', bookId:'book_2' },
+    { id:99, arabic:'مُجْتَمَعٌ',       plain:'مجتمع',     zh:'社会',              en:'society',            pos:'名词',  diff:2, root:'ج م ع', morph:'مُجْتَمَعَاتٌ',     unit:'p.25', notes:'جـ مُجْتَمَعَاتٌ', bookId:'book_2' },
+    { id:100,arabic:'اِجْتِمَاعِيٌّ',  plain:'اجتماعي',   zh:'社会的',            en:'social',             pos:'形容词',diff:2, root:'ج م ع', morph:'',                  unit:'p.25', notes:'', bookId:'book_2' },
+    { id:101,arabic:'عَلَى الرَّغْمِ مِنْ', plain:'على الرغم من', zh:'尽管……', en:'despite, in spite of', pos:'短语', diff:3, root:'ر غ م', morph:'',                 unit:'p.25', notes:'', bookId:'book_2' },
+    { id:102,arabic:'صِفَةٌ',           plain:'صفة',       zh:'特征，属性，品质；形容词', en:'quality, attribute; adjective', pos:'名词', diff:2, root:'و ص ف', morph:'صِفَاتٌ', unit:'p.25', notes:'جـ صِفَاتٌ', bookId:'book_2' },
+    { id:103,arabic:'اِمْتَازَ',        plain:'امتاز',     zh:'具有（长处、优点）',en:'to be distinguished by', pos:'动词', diff:3, root:'م ي ز', morph:'يَمْتَازُ',      unit:'p.25', notes:'اِمْتَازَ يَمْتَازُ اِمْتِيَازًا بِكَذَا', bookId:'book_2' },
+    { id:104,arabic:'كَرَمٌ',           plain:'كرم',       zh:'慷慨，大方，宽宏大量', en:'generosity',      pos:'名词',  diff:2, root:'ك ر م', morph:'',                  unit:'p.25', notes:'', bookId:'book_2' },
+    { id:105,arabic:'أَظْهَرَ',         plain:'أظهر',      zh:'显示，表现',        en:'to show, to display', pos:'动词', diff:2, root:'ظ ه ر', morph:'يُظْهِرُ',          unit:'p.25', notes:'أَظْهَرَ يُظْهِرُ إِظْهَارًا', bookId:'book_2' },
+    { id:106,arabic:'رَحَّبَ',          plain:'رحب',       zh:'欢迎',              en:'to welcome',         pos:'动词',  diff:2, root:'ر ح ب', morph:'يُرَحِّبُ',         unit:'p.25', notes:'رَحَّبَ يُرَحِّبُ تَرْحِيبًا بِهِ', bookId:'book_2' },
+    { id:107,arabic:'مَدْعُوٌّ',        plain:'مدعو',      zh:'应邀者，被邀请者',  en:'invited guest',      pos:'名词',  diff:2, root:'د ع و', morph:'مَدْعُوُّونَ',       unit:'p.25', notes:'جـ مَدْعُوُّونَ', bookId:'book_2' },
+    { id:108,arabic:'سَابِقًا',         plain:'سابقا',     zh:'过去，以前，以往',  en:'previously, formerly', pos:'副词', diff:2, root:'س ب ق', morph:'',                 unit:'p.25', notes:'', bookId:'book_2' },
+    { id:109,arabic:'مَسْؤُولٌ',        plain:'مسؤول',     zh:'负责人，领导',      en:'responsible person, official', pos:'名词', diff:2, root:'س أ ل', morph:'مَسْؤُولُونَ', unit:'p.25', notes:'جـ مَسْؤُولُونَ', bookId:'book_2' },
+    { id:110,arabic:'اِقْتِصَادِيٌّ',  plain:'اقتصادي',   zh:'经济的',            en:'economic',           pos:'形容词',diff:2, root:'ق ص د', morph:'',                  unit:'p.25', notes:'', bookId:'book_2' },
+    { id:111,arabic:'عُضْوٌ',           plain:'عضو',       zh:'成员；肢体',        en:'member; organ/limb', pos:'名词',  diff:2, root:'ع ض و', morph:'أَعْضَاءٌ',         unit:'p.25', notes:'جـ أَعْضَاءٌ', bookId:'book_2' },
+    { id:112,arabic:'رَبَّى',           plain:'ربى',       zh:'培养，培育，抚育',  en:'to raise, to educate', pos:'动词', diff:2, root:'ر ب و', morph:'يُرَبِّي',          unit:'p.25,p.26', notes:'رَبَّى يُرَبِّي تَرْبِيَةَ الْوَلَدَ', bookId:'book_2' },
+    { id:113,arabic:'اِعْتَنَى',        plain:'اعتنى',     zh:'关心，照料',        en:'to care for',        pos:'动词',  diff:2, root:'ع ن ي', morph:'يَعْتَنِي',         unit:'p.25', notes:'اِعْتَنَى يَعْتَنِي اِعْتِنَاءً بِهِ', bookId:'book_2' },
+    { id:114,arabic:'عِنَايَةٌ',        plain:'عناية',     zh:'关心，照料',        en:'care, attention',    pos:'名词',  diff:2, root:'ع ن ي', morph:'عِنَايَاتٌ',        unit:'p.25', notes:'جـ عِنَايَاتٌ', bookId:'book_2' },
+    { id:115,arabic:'دَقِيقٌ',          plain:'دقيق',      zh:'细的，精细的，细微的；精密的', en:'precise, fine, delicate', pos:'形容词', diff:2, root:'د ق ق', morph:'',        unit:'p.25', notes:'', bookId:'book_2' },
+    { id:116,arabic:'جَنَّةٌ',          plain:'جنة',       zh:'天堂，乐园',        en:'paradise, heaven',   pos:'名词',  diff:2, root:'ج ن ن', morph:'جَنَّاتٌ وَجِنَانٌ', unit:'p.25', notes:'جـ جَنَّاتٌ', bookId:'book_2' },
+    { id:117,arabic:'رَابِطَةٌ',        plain:'رابطة',     zh:'联系；协会；纽带',  en:'bond, association',  pos:'名词',  diff:3, root:'ر ب ط', morph:'رَوَابِطُ',         unit:'p.25', notes:'جـ رَوَابِطُ', bookId:'book_2' },
+    { id:118,arabic:'قَرِيبٌ',          plain:'قريب',      zh:'亲戚，亲属',        en:'relative, kin',      pos:'名词',  diff:1, root:'ق ر ب', morph:'أَقَارِبُ وَأَقْرِبَاءُ', unit:'p.25', notes:'جـ أَقَارِبُ', bookId:'book_2' },
+    { id:119,arabic:'تَعَاوَنَ',        plain:'تعاون',     zh:'合作，互助',        en:'to cooperate',       pos:'动词',  diff:3, root:'ع و ن', morph:'يَتَعَاوَنُ',       unit:'p.25', notes:'تَعَاوَنَ يَتَعَاوَنُ تَعَاوُنًا عَلَى الْأَمْرِ', bookId:'book_2' },
+    // ── 第26页 ───────────────────────────────────────────────
+    { id:120,arabic:'بَلْ',             plain:'بل',        zh:'而且；而，而是',    en:'rather, but',        pos:'连词',  diff:2, root:'',      morph:'',                  unit:'p.26', notes:'', bookId:'book_2' },
+    { id:121,arabic:'أَقَامَ',          plain:'أقام',      zh:'举行，举办；建立',  en:'to hold, to establish', pos:'动词', diff:2, root:'ق و م', morph:'يُقِيمُ',           unit:'p.26', notes:'أَقَامَهُ يُقِيمُ إِقَامَةً', bookId:'book_2' },
+    { id:122,arabic:'مِنَ الْمَعْرُوفِ أَنَّ', plain:'من المعروف أن', zh:'众所周知……', en:'it is well known that', pos:'短语', diff:3, root:'ع ر ف', morph:'', unit:'p.26', notes:'', bookId:'book_2' },
+    { id:123,arabic:'تَقْلِيدِيٌّ',    plain:'تقليدي',    zh:'传统的',            en:'traditional',        pos:'形容词',diff:2, root:'ق ل د', morph:'',                  unit:'p.26', notes:'', bookId:'book_2' },
+    { id:124,arabic:'ظَاهِرَةٌ',        plain:'ظاهرة',     zh:'现象',              en:'phenomenon',         pos:'名词',  diff:3, root:'ظ ه ر', morph:'ظَوَاهِرُ',         unit:'p.26', notes:'جـ ظَوَاهِرُ', bookId:'book_2' },
+    { id:125,arabic:'عَصْرٌ',           plain:'عصر',       zh:'时代',              en:'era, age',           pos:'名词',  diff:2, root:'ع ص ر', morph:'عُصُورٌ',           unit:'p.26', notes:'جـ عُصُورٌ', bookId:'book_2' },
+    { id:126,arabic:'تَبَادَلَ',        plain:'تبادل',     zh:'互相交换，交流',    en:'to exchange',        pos:'动词',  diff:3, root:'ب د ل', morph:'يَتَبَادَلُ',       unit:'p.26', notes:'تَبَادَلَ يَتَبَادَلُ تَبَادُلاً', bookId:'book_2' },
+    { id:127,arabic:'اِخْتَلَفَ',       plain:'اختلف',     zh:'不同，有差异，意见相左', en:'to differ, to disagree', pos:'动词', diff:2, root:'خ ل ف', morph:'يَخْتَلِفُ', unit:'p.26', notes:'اِخْتَلَفَ يَخْتَلِفُ اِخْتِلَافًا', bookId:'book_2' },
+    // ── 第27页 ───────────────────────────────────────────────
+    { id:128,arabic:'لَا... فَقَطْ، بَلْ...', plain:'لا فقط بل', zh:'不只……，而且……', en:'not only... but also...', pos:'短语', diff:3, root:'', morph:'', unit:'p.27', notes:'', bookId:'book_2' },
+    { id:129,arabic:'فَعَلَ',           plain:'فعل',       zh:'做，干，行事，行动',en:'to do, to act',       pos:'动词',  diff:1, root:'ف ع ل', morph:'يَفْعَلُ',          unit:'p.5', notes:'فَعَلَ يَفْعَلُ فِعْلاً', bookId:'book_2' },
+    { id:130,arabic:'أَضَافَ',          plain:'أضاف',      zh:'除此之外（动词：添加）', en:'to add; besides',  pos:'动词',  diff:2, root:'ض ي ف', morph:'يُضِيفُ',          unit:'p.4', notes:'أَضَافَ يُضِيفُ', bookId:'book_2' },
+    { id:131,arabic:'تَمَتَّعَ',        plain:'تمتع',      zh:'享受，享有',        en:'to enjoy',           pos:'动词',  diff:2, root:'م ت ع', morph:'يَتَمَتَّعُ',       unit:'p.7', notes:'تَمَتَّعَ يَتَمَتَّعُ بِهِ', bookId:'book_2' },
+    { id:132,arabic:'هَاتِ',            plain:'هات',       zh:'把……拿过来（命令式）', en:'bring! here!',     pos:'动词',  diff:2, root:'أ ت ي', morph:'',                  unit:'p.24', notes:'命令式动词', bookId:'book_2' },
+    // ── 库尔德语词汇 ─────────────────────────────────────────
+    { id:201, arabic:'هەست و سۆز', plain:'هەست و سۆز', zh:'感情与情感', en:'Feeling / Emotion', pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:202, arabic:'هەوالٌ',     plain:'هەوال',       zh:'新闻',       en:'News',              pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:203, arabic:'سەرقالٌ',   plain:'سەرقال',      zh:'忙碌的',     en:'Busy',              pos:'形容词',diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:204, arabic:'ئاسان',     plain:'ئاسان',       zh:'容易的',     en:'Easy',              pos:'形容词',diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:205, arabic:'پێویست',    plain:'پێویست',      zh:'必要的，需要', en:'Necessary / Need', pos:'形容词',diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:206, arabic:'هەولٌ',     plain:'هەول',        zh:'努力，尝试', en:'Effort / Try',      pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:207, arabic:'ناوچە',     plain:'ناوچە',       zh:'地区',       en:'Area',              pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:208, arabic:'ئەزمون',    plain:'ئەزمون',      zh:'经验',       en:'Experience',        pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:209, arabic:'ئالنگاری',  plain:'ئالنگاری',    zh:'挑战',       en:'Challenge',         pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:210, arabic:'پەروەردە', plain:'پەروەردە',    zh:'教育',       en:'Education',         pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:211, arabic:'گەشەپێندان',plain:'گەشەپێندان', zh:'发展',       en:'Development',       pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:212, arabic:'هاوسەنگی', plain:'هاوسەنگی',   zh:'平衡',       en:'Balance',           pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+  ];
+  return seed;
+})();
+
+const examples = {
+  9:  [
+    { ar:'إِنَّ شَنْتَشِنَ مَدِينَةٌ سَاحِلِيَّةٌ جَمِيلَةٌ تَسْتَحِقُّ الزِّيَارَةَ.', zh:'深圳是一座美丽的海滨城市，值得一游。' },
+    { ar:'هَذَا الْكِتَابُ يَسْتَحِقُّ الْقِرَاءَةَ.', zh:'这本书值得一读。' },
+    { ar:'عَمِلْتُمْ عَمَلاً يَسْتَحِقُّ الثَّنَاءَ.', zh:'你们做了值得表扬的工作。' },
+  ],
+  15: [
+    { ar:'السَّفَرُ بِالْقِطَارِ مِنْ بَكِينَ إِلَى شَانْغَهَايْ يَسْتَغْرِقُ أَرْبَعَ عَشْرَةَ سَاعَةً.', zh:'坐火车从北京到上海需要十四个小时。' },
+    { ar:'أَمَامَنَا رِحْلَةٌ طَوِيلَةٌ تَسْتَغْرِقُ سَاعَتَيْنِ وَنِصْفًا.', zh:'前面有一段漫长的旅程，需要两个半小时。' },
+  ],
+  20: [
+    { ar:'لَا نَشْعُرُ بِالتَّعَبِ وَالْمَشَقَّةِ فِي السَّفَرِ إِذَا سَافَرْنَا بِالطَّائِرَةِ.', zh:'坐飞机旅行，我们不会感到疲倦和劳苦。' },
+    { ar:'يَشْعُرُ شَاهِرٌ بِالْفَرَحِ وَالسُّرُورِ بَعْدَ إِكْمَالِ عَمَلِهِ.', zh:'沙希尔完成工作后感到快乐和高兴。' },
+  ],
+  34: [
+    { ar:'أَسْتَطِيعُ إِعْدَادَ أَطْعِمَةٍ لَذِيذَةٍ لَكُمْ.', zh:'我能为你们准备美味的食物。' },
+    { ar:'هَلْ تَسْتَطِيعُ أَنْ تَفْعَلَ ذَلِكَ؟', zh:'你能做到吗？' },
+    { ar:'لَا يَسْتَطِيعُ الْحَيَوَانُ أَنْ يُفَكِّرَ مِثْلَ الْإِنْسَانِ.', zh:'动物不能像人一样思考。' },
+  ],
+  72: [
+    { ar:'يَشْتَاقُ وَلِيدٌ إِلَى أَهْلِهِ دَائِمًا.', zh:'沃利德经常思念他的家人。' },
+    { ar:'كَانَتْ فَرِيدَةُ تَشْتَاقُ إِلَى وَالِدَيْهَا كَثِيرًا.', zh:'法里达非常想念她的父母。' },
+    { ar:'أَنَا مُشْتَاقٌ إِلَى صَدِيقِي الْقَدِيمِ لِأَنَّهُ لَمْ يَكْتُبْ إِلَيَّ مُنْذُ فَتْرَةٍ.', zh:'我思念我的老朋友，因为他很久没给我写信了。' },
+  ],
+  106:[
+    { ar:'رَحَّبَ بِنَا الْمَسْؤُولُونَ تَرْحِيبًا حَارًّا.', zh:'负责人热烈欢迎了我们。' },
+  ],
+  126:[
+    { ar:'يَتَبَادَلُ الطَّلَبَةُ أَطْرَافَ الْحَدِيثِ فِي غُرْفَةِ النَّوْمِ.', zh:'学生们在宿舍里互相交谈。' },
+    { ar:'هُدَى وَكَرِيمَةُ تَتَبَادَلَانِ خِبْرَتَهُمَا فِي الدِّرَاسَةِ.', zh:'胡达和克里玛互相交流学习经验。' },
+  ],
+  127:[
+    { ar:'الْجَوُّ فِي الْجَنُوبِ يَخْتَلِفُ عَنْهُ فِي الشَّمَالِ.', zh:'南方的气候与北方的气候不同。' },
+    { ar:'تَخْتَلِفُ الْعَادَاتُ بِاخْتِلَافِ الْأُمَمِ.', zh:'风俗习惯因民族不同而不同。' },
+  ],
+  19: [
+    { ar:'اِسْتَمَرَّ الِاجْتِمَاعُ حَتَّى السَّاعَةِ السَّابِعَةِ مَسَاءً.', zh:'会议一直持续到晚上七点。' },
+    { ar:'قَرَأْتُ الْقِصَّةَ حَتَّى نِهَايَتَهَا.', zh:'我把这个故事读到了结尾。' },
+    { ar:'سَأَشْرَحُ لَكَ الدَّرْسَ حَتَّى تَفْهَمَ.', zh:'我来给你讲解这一课，直到你听懂为止。' },
+  ],
+  131:[
+    { ar:'تَمَتَّعْنَا بِالْمَنَاظِرِ الْجَمِيلَةِ فِي الْقَصْرِ الصَّيْفِيِّ.', zh:'我们欣赏了颐和园的美丽风景。' },
+    { ar:'مَا زَالَتْ جَدَّةُ أَمِينَةَ تَتَمَتَّعُ بِصِحَّةٍ جَيِّدَةٍ.', zh:'阿米娜的祖母身体仍然很好。' },
+  ],
+};
+
+/* ─────────────────────────────────────────────────────────
+   LOCALSTORAGE PERSISTENCE
+───────────────────────────────────────────────────────── */
+const SEED_IDS = new Set(Array.from({length:132},(_,i)=>i+1));
+const LS = {
+  WORDS:    'mansour_words_v1',
+  PROGRESS: 'mansour_progress_v1',
+  STREAK:   'mansour_streak_v1',
+  BOOKS:    'mansour_books_v1',
+  BOOKID:   'mansour_bookid_v1',
+  TRASH:    'mansour_trash_v1',
+};
+
+function saveWords() {
+  // Save user-added words (id > 132) + any seed words that were edited
+  const seedWords = words.filter(w => SEED_IDS.has(w.id));
+  const userWords = words.filter(w => !SEED_IDS.has(w.id));
+  // Find edited seed words by comparing with original seed
+  // We'll just save ALL words for simplicity and reliability
+  try { localStorage.setItem(LS.WORDS, JSON.stringify(words)); } catch(e) {}
+}
+
+function saveProgress() {
+  try { localStorage.setItem(LS.PROGRESS, JSON.stringify(progress)); } catch(e) {}
+  try { localStorage.setItem(LS.STREAK, String(streak)); } catch(e) {}
+}
+
+function saveBooks() {
+  try { localStorage.setItem(LS.BOOKS, JSON.stringify(books)); } catch(e) {}
+  try { localStorage.setItem(LS.BOOKID, currentBookId); } catch(e) {}
+}
+
+function saveTrash() {
+  try { localStorage.setItem(LS.TRASH, JSON.stringify(trash)); } catch(e) {}
+}
+
+function loadAll() {
+  // Load words (if saved, use saved; otherwise use seed)
+  try {
+    const saved = localStorage.getItem(LS.WORDS);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) words = parsed;
+    }
+  } catch(e) {}
+
+  // Load progress
+  try {
+    const saved = localStorage.getItem(LS.PROGRESS);
+    if (saved) progress = JSON.parse(saved);
+  } catch(e) {}
+
+  // Load streak
+  try {
+    const saved = localStorage.getItem(LS.STREAK);
+    if (saved) streak = parseInt(saved) || 0;
+  } catch(e) {}
+
+  // Load books
+  try {
+    const saved = localStorage.getItem(LS.BOOKS);
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      if (Array.isArray(parsed) && parsed.length > 0) books = parsed;
+    }
+  } catch(e) {}
+
+  // Load currentBookId
+  try {
+    const saved = localStorage.getItem(LS.BOOKID);
+    if (saved) currentBookId = saved;
+  } catch(e) {}
+
+  // Load trash
+  try {
+    const saved = localStorage.getItem(LS.TRASH);
+    if (saved) trash = JSON.parse(saved) || [];
+  } catch(e) {}
+}
+
+/* ─────────────────────────────────────────────────────────
+   NAVIGATION
+───────────────────────────────────────────────────────── */
+function switchScreen(name) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('screen-' + name).classList.add('active');
+  document.querySelector(`[data-screen="${name}"]`).classList.add('active');
+
+  if (name === 'home') { updateHomeStats(); renderBookLessonPanel(); }
+  if (name === 'library') {
+    renderLibraryTOC();
+  }
+}
+
+function goHome() { switchScreen('home'); }
+
+/* ─────────────────────────────────────────────────────────
+   TIRED OVERLAY
+───────────────────────────────────────────────────────── */
+function openTired() {
+  document.getElementById('tired-overlay').classList.add('open');
+}
+function closeTired(e) {
+  if (e.target === document.getElementById('tired-overlay')) {
+    document.getElementById('tired-overlay').classList.remove('open');
+  }
+}
+/* ─────────────────────────────────────────────────────────
+   BOOK + LESSON MANAGEMENT
+───────────────────────────────────────────────────────── */
+
+// Get sorted unique unit keys for a book
+function getLessonsForBook(bookId) {
+  const raw = new Set();
+  words.filter(w => w.bookId === bookId).forEach(w => {
+    // A word may span multiple pages e.g. "p.4,p.27" — split and add each
+    (w.unit || '').split(',').forEach(u => { const t = u.trim(); if (t) raw.add(t); });
+  });
+  return [...raw].sort((a, b) => {
+    // Sort numerically by page number
+    const n = s => parseInt(s.replace(/[^\d]/g, '')) || 0;
+    return n(a) - n(b);
+  });
+}
+
+// Lesson key: "bookId::unit"
+function lessonKey(bookId, unit) { return bookId + '::' + unit; }
+
+function renderBookLessonPanel() {
+  const panel = document.getElementById('book-lesson-panel');
+  if (!panel) return;
+
+  panel.innerHTML = `<div class="book-rows">${
+    books.map(b => {
+      const lessons = getLessonsForBook(b.id);
+      const totalWords = words.filter(w => w.bookId === b.id).length;
+      const isActive = b.id === currentBookId;
+      const selCount = lessons.filter(u => selectedLessons.has(lessonKey(b.id, u))).length;
+
+      return `<div class="book-row${isActive ? ' active' : ''}" id="book-row-${b.id}">
+        <div class="book-row-header" onclick="selectBook('${b.id}')">
+          <div class="book-radio"></div>
+          <span class="book-row-name">${b.name}</span>
+          <span class="book-row-meta">${totalWords} 词${selCount ? ' · <span style="color:var(--teal)">' + selCount + '/' + lessons.length + ' 课</span>' : ''}</span>
+          <button class="book-row-edit" onclick="event.stopPropagation();openBookEdit('${b.id}')">✏</button>
+          <span class="book-row-arrow">▶</span>
+          <button class="book-row-edit" onclick="event.stopPropagation();openBookEdit(\'${b.id}\')" title="编辑词书">✏</button>
+        </div>
+        <div class="lesson-panel">
+          <div class="lesson-panel-header">
+            <span class="lesson-panel-label">选择课次（可多选）</span>
+            <button class="lesson-select-all" onclick="toggleAllLessons('${b.id}')">
+              ${selCount === lessons.length && lessons.length > 0 ? '取消全选' : '全选'}
+            </button>
+          </div>
+          <div class="lesson-chips">
+            ${lessons.length
+              ? lessons.map(u => {
+                  const key = lessonKey(b.id, u);
+                  const cnt = words.filter(w => w.bookId === b.id && (w.unit||'').split(',').map(x=>x.trim()).includes(u)).length;
+                  return `<div class="lesson-chip${selectedLessons.has(key) ? ' active' : ''}"
+                    onclick="toggleLesson('${b.id}','${u}')">${u}<span style="opacity:.5;font-size:10px;margin-left:4px">${cnt}</span></div>`;
+                }).join('')
+              : '<span style="color:var(--text-muted);font-size:12px">暂无词汇，请先导入</span>'
+            }
+          </div>
+        </div>
+      </div>`;
+    }).join('')
+  }</div>
+  <div class="selection-summary" id="selection-summary"></div>`;
+
+  updateSelectionSummary();
+}
+
+function selectBook(id) {
+  currentBookId = id;
+  saveBooks();
+  renderBookLessonPanel();
+  updateHomeStats();
+}
+
+function toggleLesson(bookId, unit) {
+  const key = lessonKey(bookId, unit);
+  if (selectedLessons.has(key)) selectedLessons.delete(key);
+  else selectedLessons.add(key);
+  renderBookLessonPanel();
+}
+
+function toggleAllLessons(bookId) {
+  const lessons = getLessonsForBook(bookId);
+  const allSelected = lessons.every(u => selectedLessons.has(lessonKey(bookId, u)));
+  if (allSelected) {
+    lessons.forEach(u => selectedLessons.delete(lessonKey(bookId, u)));
+  } else {
+    lessons.forEach(u => selectedLessons.add(lessonKey(bookId, u)));
+  }
+  renderBookLessonPanel();
+}
+
+function updateSelectionSummary() {
+  const el = document.getElementById('selection-summary');
+  if (!el) return;
+  if (selectedLessons.size === 0) {
+    el.innerHTML = '未选课次，将从<span>全部词库</span>出题';
+    return;
+  }
+  // Count words in selection
+  const scopeWords = getSessionWords();
+  el.innerHTML = `已选 <span>${selectedLessons.size}</span> 课次，共 <span>${scopeWords.length}</span> 词`;
+}
+
+// Get the words for the current study session based on selections
+function getSessionWords() {
+  if (selectedLessons.size === 0) {
+    // No lesson selected → use all words from current book
+    return words.filter(w => w.bookId === currentBookId);
+  }
+  return words.filter(w => {
+    const units = (w.unit || '').split(',').map(u => u.trim());
+    return units.some(u => selectedLessons.has(lessonKey(w.bookId, u)));
+  });
+}
+
+function openNewBook() {
+  document.getElementById('newbook-name').value = '';
+  document.getElementById('newbook-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('newbook-name').focus(), 100);
+}
+function closeNewBook() {
+  document.getElementById('newbook-overlay').classList.remove('open');
+}
+function saveNewBook() {
+  const name = document.getElementById('newbook-name').value.trim();
+  if (!name) { showToast('请输入词书名称', 'rose'); return; }
+  if (books.find(b => b.name === name)) { showToast('词书名称已存在', 'rose'); return; }
+  const id = 'book_' + Date.now();
+  books.push({ id, name });
+  currentBookId = id;
+  closeNewBook();
+  saveBooks();
+  renderBookLessonPanel();
+  updateHomeStats();
+  showToast(`已创建词书「${name}」`, 'teal');
+}
+
+function openWrongWords() {
+  if (session.wrongIds.size === 0) return;
+  switchScreen('library');
+  document.getElementById('search-input').value = '';
+  document.getElementById('lib-toc').innerHTML = '';
+  document.getElementById('word-list').style.display = '';
+  renderLibrary('', true, libCurrentLesson);
+}
+
+function clearWrongWords() {
+  session.wrongIds = new Set();
+  document.getElementById('stat-due').textContent = 0;
+}
+
+function setRoundSize(n) {
+  session.roundSize = n;
+  document.querySelectorAll('.round-chip').forEach(btn => {
+    btn.classList.toggle('active', parseInt(btn.textContent) === n);
+  });
+}
+
+/* ─────────────────────────────────────────────────────────
+   HOME STATS
+───────────────────────────────────────────────────────── */
+function updateHomeStats() {
+  const scopeWords = getSessionWords();
+  document.getElementById('stat-total').textContent = scopeWords.length;
+  let mastered = 0;
+  scopeWords.forEach(w => {
+    const p = progress[w.id];
+    if (p && p.status === 'mastered') mastered++;
+  });
+  document.getElementById('stat-mastered').textContent = mastered;
+  document.getElementById('stat-due').textContent = session.wrongIds.size;
+  document.getElementById('stat-streak').textContent = streak;
+  renderBookLessonPanel();
+}
+
+/* ─────────────────────────────────────────────────────────
+   LEARN MODE
+───────────────────────────────────────────────────────── */
+let session = {
+  queue: [],
+  index: 0,
+  mode: 'flashcard',
+  correct: 0,
+  wrong: 0,
+  flipped: false,
+  roundSize: 20,
+  wrongIds: new Set(),
+};
+
+function startLearnMode(mode) {
+  const scopeWords = getSessionWords();
+  if (scopeWords.length === 0) {
+    showToast('当前词书暂无词汇，请先导入', 'rose');
+    return;
+  }
+  switchScreen('learn');
+  session.queue = [...scopeWords].sort(() => Math.random() - 0.5).slice(0, session.roundSize);
+  session.index = 0;
+  session.correct = 0;
+  session.wrong = 0;
+  session.wrongIds = new Set();
+  session.mode = mode;
+
+  document.getElementById('session-end').classList.remove('show');
+  document.getElementById('mode-flashcard').style.display = 'none';
+  document.getElementById('mode-quiz').style.display = 'none';
+
+  document.querySelectorAll('.mode-pill').forEach(p => p.classList.remove('active'));
+
+  switchMode(mode);
+  updateProgress();
+}
+
+function switchMode(mode) {
+  session.mode = mode;
+  ['flashcard','quiz'].forEach(m => {
+    document.getElementById('mode-' + m).style.display = m === mode ? 'block' : 'none';
+    document.getElementById('pill-' + m).classList.toggle('active', m === mode);
+  });
+
+  if (!session.queue.length) {
+    const scopeWords = getSessionWords();
+    session.queue = [...scopeWords].sort(() => Math.random() - 0.5).slice(0, session.roundSize);
+    session.index = 0;
+  }
+  renderCurrent();
+}
+
+function renderCurrent() {
+  if (!session.queue.length) return;
+  if (session.index >= session.queue.length) {
+    showSessionEnd();
+    return;
+  }
+
+  const w = session.queue[session.index];
+  updateProgress();
+
+  if (session.mode === 'flashcard') renderFlashcard(w);
+  if (session.mode === 'quiz')      renderQuiz(w);
+}
+
+function updateProgress() {
+  const total = session.queue.length;
+  const idx = session.index;
+  document.getElementById('learn-progress-text').textContent = `${idx} / ${total}`;
+  document.getElementById('progress-bar').style.width = total ? `${(idx/total)*100}%` : '0%';
+}
+
+/* Flashcard */
+function renderFlashcard(w) {
+  session.flipped = false;
+  const scene = document.getElementById('card-scene');
+  scene.classList.remove('flipped');
+  document.getElementById('score-row').classList.remove('visible');
+
+  document.getElementById('fc-arabic').textContent = w.arabic;
+  // Clear back face until user flips
+  document.getElementById('fc-meaning').textContent = '';
+  document.getElementById('fc-en').textContent = '';
+  document.getElementById('fc-pos').textContent = '';
+}
+
+function flipCard() {
+  if (session.mode !== 'flashcard') return;
+  if (session.flipped) return;
+  session.flipped = true;
+
+  // Fill back face content only now
+  const w = session.queue[session.index];
+  document.getElementById('fc-meaning').textContent = w.zh;
+  document.getElementById('fc-en').textContent = w.en || '';
+  document.getElementById('fc-pos').textContent = w.pos || '';
+
+  document.getElementById('card-scene').classList.add('flipped');
+  setTimeout(() => {
+    document.getElementById('score-row').classList.add('visible');
+  }, 350);
+}
+
+function scoreCard(q) {
+  const w = session.queue[session.index];
+  if (!progress[w.id]) progress[w.id] = { status:'new', ease_factor:2.5, interval:1, repetitions:0, next_review:0 };
+  const p = progress[w.id];
+
+  if (q >= 2) {
+    if (p.repetitions === 0) p.interval = 1;
+    else if (p.repetitions === 1) p.interval = 6;
+    else p.interval = Math.round(p.interval * p.ease_factor);
+    p.ease_factor = Math.max(1.3, p.ease_factor + 0.1 - (3-q)*(0.08 + (3-q)*0.02));
+    p.repetitions++;
+    if (p.repetitions >= 3) p.status = p.interval > 21 ? 'mastered' : 'review';
+    else p.status = 'learning';
+    session.correct++;
+  } else {
+    p.repetitions = 0;
+    p.interval = 1;
+    p.status = 'learning';
+    session.wrong++;
+  }
+
+  p.next_review = Date.now() + p.interval * 86400000;
+  p.last_review = Date.now();
+  saveProgress();
+
+  session.index++;
+  setTimeout(renderCurrent, 200);
+}
+
+/* Quiz */
+function renderQuiz(w) {
+  document.getElementById('qz-arabic').textContent = w.arabic;
+
+  // Reset root hint
+  const btn = document.getElementById('qz-root-btn');
+  const display = document.getElementById('qz-root-display');
+  btn.classList.remove('revealed');
+  btn.textContent = '词根提示';
+  btn.disabled = false;
+  display.textContent = '';
+  display.classList.remove('visible');
+
+  const opts = buildOptions(w, 4);
+  const container = document.getElementById('quiz-options');
+  container.innerHTML = '';
+  container.className = 'quiz-options';
+  opts.forEach(opt => {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-opt';
+    btn.textContent = opt.zh;
+    btn.onclick = () => handleQuizAnswer(btn, opt, w, container);
+    container.appendChild(btn);
+  });
+}
+
+function showQuizRoot() {
+  const w = session.queue[session.index];
+  const root = w.root || '';
+  const btn = document.getElementById('qz-root-btn');
+  const display = document.getElementById('qz-root-display');
+  if (!root) {
+    btn.textContent = '无词根';
+    btn.disabled = true;
+    return;
+  }
+  display.textContent = root;
+  display.classList.add('visible');
+  btn.classList.add('revealed');
+  btn.textContent = '词根';
+  btn.disabled = true;
+}
+
+function handleQuizAnswer(btn, opt, w, container) {
+  if (container.classList.contains('answered')) return;
+
+  const isCorrect = opt.id === w.id;
+
+  if (!isCorrect) {
+    // Mark wrong button red, let user try again
+    btn.classList.add('wrong');
+    btn.disabled = true;
+    // Record this word as wrong and update the due counter
+    session.wrongIds.add(w.id);
+    document.getElementById('stat-due').textContent = session.wrongIds.size;
+    return;
+  }
+
+  // Correct: lock, highlight, advance
+  container.classList.add('answered');
+  btn.classList.add('correct');
+  scoreCard(3);
+}
+
+function buildOptions(target, n) {
+  const pool = words.filter(w => w.id !== target.id);
+  const shuffled = pool.sort(() => Math.random() - 0.5).slice(0, n-1);
+  const arr = [...shuffled, target].sort(() => Math.random() - 0.5);
+  return arr;
+}
+
+/* Listen */
+
+
+function playAudio() {
+  const w = session.queue[session.index];
+  if (w) speakArabic(w.arabic);
+}
+
+function speakArabic(text) {
+  if (!('speechSynthesis' in window)) { showToast('浏览器不支持语音合成', 'rose'); return; }
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'ar-SA';
+  utt.rate = 0.85;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utt);
+}
+
+function endSession() {
+  if (session.index === 0) { switchScreen('home'); return; }
+  showSessionEnd();
+}
+
+function showSessionEnd() {
+  document.getElementById('mode-flashcard').style.display = 'none';
+  document.getElementById('mode-quiz').style.display = 'none';
+  const se = document.getElementById('session-end');
+  se.classList.add('show');
+  document.getElementById('res-total').textContent = session.index;
+  document.getElementById('res-correct').textContent = session.correct;
+  document.getElementById('res-wrong').textContent = session.wrong;
+
+  // Update streak (in-memory only)
+  const today = new Date().toDateString();
+  if (streak === 0) streak = 1;
+}
+
+function restartSession() {
+  startLearnMode(session.mode);
+}
+
+/* ─────────────────────────────────────────────────────────
+   LIBRARY
+───────────────────────────────────────────────────────── */
+/* ─────────────────────────────────────────────────────────
+   LIBRARY TOC + LESSON VIEW
+───────────────────────────────────────────────────────── */
+let libCurrentLesson = null; // null = TOC view, string = lesson view
+let libSelectMode    = false; // whether bulk-select is active
+
+function toggleLibSelectMode() {
+  libSelectMode = !libSelectMode;
+  libSelectedIds = new Set();
+  const btn = document.getElementById('lib-select-btn');
+  const bar = document.getElementById('bulk-bar');
+  if (btn) btn.classList.toggle('active', libSelectMode);
+  if (btn) btn.textContent = libSelectMode ? '取消选择' : '选择';
+  if (bar) bar.style.display = libSelectMode ? '' : 'none';
+  // Re-render current lesson without full reload
+  if (libCurrentLesson) renderLibrary(document.getElementById('search-input')?.value || '', false, libCurrentLesson);
+  if (libSelectMode) updateBulkBar();
+}
+
+
+
+/* ─────────────────────────────────────────────────────────
+   BULK SELECTION
+───────────────────────────────────────────────────────── */
+function toggleWordSelectRow(id) {
+  const checked = !libSelectedIds.has(id);
+  toggleWordSelect(id, checked);
+}
+
+function toggleWordSelect(id, checked) {
+  if (checked) libSelectedIds.add(id);
+  else libSelectedIds.delete(id);
+  updateBulkBar();
+  // lightweight DOM sync — no full re-render
+  document.querySelectorAll('#word-list .word-row').forEach(row => {
+    const cb = row.querySelector('.wr-check');
+    if (!cb) return;
+    const rowId = parseInt(cb.getAttribute('onclick')?.match(/\d+/)?.[0]);
+    if (rowId === id) {
+      cb.checked = checked;
+      row.classList.toggle('word-row-selected', checked);
+    }
+  });
+}
+
+function updateBulkBar() {
+  const n = libSelectedIds.size;
+  const countEl = document.getElementById('bulk-count');
+  const delBtn  = document.getElementById('bulk-delete-btn');
+  const allCb   = document.getElementById('bulk-check-all');
+  if (!countEl) return;
+  countEl.textContent = n > 0 ? `已选 ${n} 个` : '全选';
+  if (delBtn) delBtn.disabled = n === 0;
+  // sync select-all checkbox state
+  if (allCb && libCurrentLesson) {
+    const lessonWords = words.filter(w => w.bookId === currentBookId &&
+      (w.unit||'').split(',').map(x=>x.trim()).includes(libCurrentLesson));
+    allCb.checked = lessonWords.length > 0 && lessonWords.every(w => libSelectedIds.has(w.id));
+    allCb.indeterminate = n > 0 && !allCb.checked;
+  }
+}
+
+function toggleSelectAllLib(checked) {
+  if (!libCurrentLesson) return;
+  const lessonWords = words.filter(w => w.bookId === currentBookId &&
+    (w.unit||'').split(',').map(x=>x.trim()).includes(libCurrentLesson));
+  lessonWords.forEach(w => { if (checked) libSelectedIds.add(w.id); else libSelectedIds.delete(w.id); });
+  renderLibrary(document.getElementById('search-input')?.value || '', false, libCurrentLesson);
+}
+
+function bulkDelete() {
+  if (libSelectedIds.size === 0) return;
+  const toTrash = words.filter(w => libSelectedIds.has(w.id));
+  toTrash.forEach(w => trash.push({ ...w, deletedAt: Date.now() }));
+  words = words.filter(w => !libSelectedIds.has(w.id));
+  libSelectedIds = new Set();
+  saveWords(); saveTrash();
+  renderLibraryLesson(libCurrentLesson);
+  updateHomeStats();
+  showToast(`已移入垃圾箱 ${toTrash.length} 个词汇`, 'rose');
+}
+
+/* ─────────────────────────────────────────────────────────
+   TRASH BIN
+───────────────────────────────────────────────────────── */
+let trashSelectedIds = new Set();
+
+function openTrash() {
+  trashSelectedIds = new Set();
+  renderTrashList();
+  document.getElementById('trash-overlay').classList.add('open');
+}
+
+function closeTrash() {
+  document.getElementById('trash-overlay').classList.remove('open');
+}
+
+function renderTrashList() {
+  const list = document.getElementById('trash-list');
+  if (!trash.length) {
+    list.innerHTML = `<div style="text-align:center;padding:32px;color:var(--text-muted);font-size:13px">垃圾箱是空的</div>`;
+    updateTrashBulkBar();
+    return;
+  }
+  list.innerHTML = trash.map((w, i) => {
+    const book = books.find(b => b.id === w.bookId);
+    const isChecked = trashSelectedIds.has(w.id);
+    return `<div class="trash-row">
+      <input type="checkbox" class="wr-check" ${isChecked ? 'checked' : ''}
+        onchange="toggleTrashSelect(${w.id}, this.checked)">
+      <span class="trash-row-arabic">${w.arabic}</span>
+      <div class="trash-row-info">
+        <div class="trash-row-zh">${w.zh}</div>
+        <div class="trash-row-meta">${book ? book.name : ''} ${w.unit ? '· ' + w.unit : ''}</div>
+      </div>
+    </div>`;
+  }).join('');
+  updateTrashBulkBar();
+}
+
+function toggleTrashSelect(id, checked) {
+  if (checked) trashSelectedIds.add(id); else trashSelectedIds.delete(id);
+  updateTrashBulkBar();
+}
+
+function toggleTrashSelectAll(checked) {
+  trash.forEach(w => { if (checked) trashSelectedIds.add(w.id); else trashSelectedIds.delete(w.id); });
+  renderTrashList();
+}
+
+function updateTrashBulkBar() {
+  const n = trashSelectedIds.size;
+  const countEl = document.getElementById('trash-bulk-count');
+  const restoreBtn = document.getElementById('trash-restore-btn');
+  const permBtn    = document.getElementById('trash-perm-btn');
+  const allCb      = document.getElementById('trash-check-all');
+  if (countEl) countEl.textContent = n > 0 ? `已选 ${n} 个` : '全选';
+  if (restoreBtn) restoreBtn.disabled = n === 0;
+  if (permBtn)    permBtn.disabled    = n === 0;
+  if (allCb) {
+    allCb.checked = trash.length > 0 && trash.every(w => trashSelectedIds.has(w.id));
+    allCb.indeterminate = n > 0 && !allCb.checked;
+  }
+}
+
+function restoreSelected() {
+  if (trashSelectedIds.size === 0) return;
+  const toRestore = trash.filter(w => trashSelectedIds.has(w.id));
+  toRestore.forEach(w => {
+    const { deletedAt, ...word } = w;
+    // Re-add book if it was deleted
+    if (!books.find(b => b.id === word.bookId)) word.bookId = currentBookId;
+    words.push(word);
+  });
+  trash = trash.filter(w => !trashSelectedIds.has(w.id));
+  trashSelectedIds = new Set();
+  saveWords(); saveTrash();
+  renderTrashList();
+  // Update trash button badge
+  const trashBtn = document.getElementById('lib-trash-btn');
+  if (trashBtn) {
+    trashBtn.style.display = trash.length ? '' : 'none';
+    if (trash.length) trashBtn.innerHTML = `🗑<span class="trash-badge">${trash.length}</span>`;
+  }
+  updateHomeStats();
+  showToast(`已还原 ${toRestore.length} 个词汇`, 'teal');
+}
+
+function permanentDeleteSelected() {
+  if (trashSelectedIds.size === 0) return;
+  const n = trashSelectedIds.size;
+  if (!confirm(`确定彻底删除选中的 ${n} 个词汇？此操作无法撤销。`)) return;
+  trash = trash.filter(w => !trashSelectedIds.has(w.id));
+  trashSelectedIds = new Set();
+  saveWords(); saveTrash();
+  renderTrashList();
+  const trashBtn = document.getElementById('lib-trash-btn');
+  if (trashBtn) {
+    trashBtn.style.display = trash.length ? '' : 'none';
+    if (trash.length) trashBtn.innerHTML = `🗑<span class="trash-badge">${trash.length}</span>`;
+  }
+  showToast(`已彻底删除 ${n} 个词汇`, 'rose');
+}
+
+/* ─────────────────────────────────────────────────────────
+   BOOK & LESSON EDIT
+───────────────────────────────────────────────────────── */
+let bookEditMode  = 'book';  // 'book' | 'lesson'
+let bookEditId    = null;
+let bookEditUnit  = null;
+
+function openBookEdit(bookId) {
+  const b = books.find(x => x.id === bookId);
+  if (!b) return;
+  bookEditMode = 'book';
+  bookEditId   = bookId;
+  bookEditUnit = null;
+  document.getElementById('bookedit-title').textContent = '编辑词书';
+  document.getElementById('bookedit-label').textContent = '词书名称';
+  document.getElementById('bookedit-name').value = b.name;
+  document.getElementById('bookedit-delete-btn').textContent = '删除词书';
+  document.getElementById('bookedit-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('bookedit-name').focus(), 100);
+}
+
+function openLessonEdit(bookId, unit) {
+  bookEditMode = 'lesson';
+  bookEditId   = bookId;
+  bookEditUnit = unit;
+  document.getElementById('bookedit-title').textContent = '编辑课次';
+  document.getElementById('bookedit-label').textContent = '课次名称';
+  document.getElementById('bookedit-name').value = unit;
+  document.getElementById('bookedit-delete-btn').textContent = '删除课次';
+  document.getElementById('bookedit-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('bookedit-name').focus(), 100);
+}
+
+function closeBookEdit() {
+  document.getElementById('bookedit-overlay').classList.remove('open');
+}
+
+function saveBookEdit() {
+  const newName = document.getElementById('bookedit-name').value.trim();
+  if (!newName) { showToast('名称不能为空', 'rose'); return; }
+
+  if (bookEditMode === 'book') {
+    if (books.find(b => b.name === newName && b.id !== bookEditId)) {
+      showToast('词书名称已存在', 'rose'); return;
+    }
+    books = books.map(b => b.id === bookEditId ? { ...b, name: newName } : b);
+    closeBookEdit();
+    saveBooks();
+    renderBookLessonPanel();
+    showToast(`词书已更名为「${newName}」`, 'teal');
+  } else {
+    // rename all words with old unit to new unit
+    if (newName !== bookEditUnit) {
+      words = words.map(w => {
+        if (w.bookId !== bookEditId) return w;
+        const units = (w.unit||'').split(',').map(u => u.trim());
+        const idx = units.indexOf(bookEditUnit);
+        if (idx === -1) return w;
+        units[idx] = newName;
+        return { ...w, unit: units.join(',') };
+      });
+      saveWords();
+      // update selectedLessons
+      const oldKey = lessonKey(bookEditId, bookEditUnit);
+      if (selectedLessons.has(oldKey)) {
+        selectedLessons.delete(oldKey);
+        selectedLessons.add(lessonKey(bookEditId, newName));
+      }
+    }
+    closeBookEdit();
+    renderLibraryTOC();
+    renderBookLessonPanel();
+    updateHomeStats();
+    showToast(`课次已更名为「${newName}」`, 'teal');
+  }
+}
+
+function deleteBookOrLesson() {
+  if (bookEditMode === 'book') {
+    const b = books.find(x => x.id === bookEditId);
+    if (!b) return;
+    const wCount = words.filter(w => w.bookId === bookEditId).length;
+    if (!confirm(`确定删除词书「${b.name}」？${wCount > 0 ? `其中 ${wCount} 个词汇将移入垃圾箱。` : ''}`)) return;
+    // Move all words to trash
+    words.filter(w => w.bookId === bookEditId).forEach(w => trash.push({ ...w, deletedAt: Date.now() }));
+    words = words.filter(w => w.bookId !== bookEditId);
+    books = books.filter(b => b.id !== bookEditId);
+    saveWords(); saveBooks(); saveTrash();
+    currentBookId = books[0]?.id || null;
+    closeBookEdit();
+    saveBooks();
+    renderBookLessonPanel();
+    updateHomeStats();
+    if (currentBookId) renderLibraryTOC();
+    showToast(`词书已删除`, 'rose');
+  } else {
+    const wCount = words.filter(w => w.bookId === bookEditId &&
+      (w.unit||'').split(',').map(u=>u.trim()).includes(bookEditUnit)).length;
+    if (!confirm(`确定删除课次「${bookEditUnit}」？${wCount > 0 ? `其中 ${wCount} 个词汇将移入垃圾箱。` : ''}`)) return;
+    words.filter(w => w.bookId === bookEditId &&
+      (w.unit||'').split(',').map(u=>u.trim()).includes(bookEditUnit))
+      .forEach(w => trash.push({ ...w, deletedAt: Date.now() }));
+    words = words.filter(w => !(w.bookId === bookEditId &&
+      (w.unit||'').split(',').map(u=>u.trim()).includes(bookEditUnit)));
+    saveWords(); saveTrash();
+    selectedLessons.delete(lessonKey(bookEditId, bookEditUnit));
+    closeBookEdit();
+    renderLibraryTOC();
+    renderBookLessonPanel();
+    updateHomeStats();
+    showToast(`课次已删除`, 'rose');
+  }
+}
+
+
+
+function renderLibraryTOC() {
+  libCurrentLesson = null;
+  libSelectedIds = new Set();
+  const book = books.find(b => b.id === currentBookId);
+  const badge = document.getElementById('lib-book-badge');
+  if (badge) badge.textContent = book ? book.name : '';
+
+  document.getElementById('lib-back-btn').textContent = '← 返回主页';
+  document.getElementById('lib-back-btn').onclick = () => switchScreen('home');
+  // Show search box in TOC too
+  document.getElementById('lib-search-box').style.display = '';
+  document.getElementById('search-input').value = '';
+  document.getElementById('bulk-bar').style.display = 'none';
+  const selBtn = document.getElementById('lib-select-btn');
+  if (selBtn) selBtn.style.display = 'none';
+  libSelectMode = false; libSelectedIds = new Set();
+  const trashBtn = document.getElementById('lib-trash-btn');
+  trashBtn.style.display = trash.length ? '' : 'none';
+  if (trash.length) trashBtn.innerHTML = `🗑<span class="trash-badge">${trash.length}</span>`;
+
+  const lessons = getLessonsForBook(currentBookId);
+  const toc = document.getElementById('lib-toc');
+  document.getElementById('word-list').style.display = 'none';
+
+  if (!lessons.length) {
+    toc.innerHTML = `<div class="empty-state"><div class="e-icon">📭</div><h3>该词书暂无词汇</h3><p>点击右上角"批量导入"或"添加词汇"开始</p></div>`;
+    return;
+  }
+
+  renderTOCGrid();
+}
+
+function renderTOCGrid() {
+  const lessons = getLessonsForBook(currentBookId);
+  const toc = document.getElementById('lib-toc');
+  toc.style.display = '';
+  document.getElementById('word-list').style.display = 'none';
+  toc.innerHTML = `<div class="lib-toc-grid">${lessons.map(u => {
+    const ws = words.filter(w => w.bookId === currentBookId && (w.unit||'').split(',').map(x=>x.trim()).includes(u));
+    const preview = ws.slice(0,3).map(w => w.arabic).join('  ');
+    return `<div class="lib-toc-card-wrap">
+      <div class="lib-toc-card" onclick="renderLibraryLesson('${u}')">
+        <div class="lib-toc-unit">${u}</div>
+        <div class="lib-toc-count">${ws.length} 个词汇</div>
+        <div class="lib-toc-preview">${preview}</div>
+      </div>
+      <button class="lib-toc-edit-btn" onclick="event.stopPropagation();openLessonEdit('${currentBookId}','${u}')" title="编辑课次">✏</button>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderLibraryLesson(unit) {
+  libCurrentLesson = unit;
+  libSelectedIds = new Set();
+  libSelectMode = false;
+  if (!unit) { renderLibraryTOC(); return; }
+
+  document.getElementById('lib-back-btn').textContent = '← 返回目录';
+  document.getElementById('lib-back-btn').onclick = () => renderLibraryTOC();
+  const badge = document.getElementById('lib-book-badge');
+  const book  = books.find(b => b.id === currentBookId);
+  if (badge) badge.textContent = (book ? book.name + ' / ' : '') + unit;
+  document.getElementById('lib-search-box').style.display = '';
+
+  // Show select + trash buttons, hide bulk bar (until select mode activated)
+  const selBtn = document.getElementById('lib-select-btn');
+  if (selBtn) { selBtn.style.display = ''; selBtn.textContent = '选择'; selBtn.classList.remove('active'); }
+  document.getElementById('bulk-bar').style.display = 'none';
+
+  const trashBtn = document.getElementById('lib-trash-btn');
+  trashBtn.style.display = trash.length ? '' : 'none';
+  if (trash.length) trashBtn.innerHTML = `🗑<span class="trash-badge">${trash.length}</span>`;
+
+  document.getElementById('lib-toc').innerHTML = '';
+  document.getElementById('word-list').style.display = '';
+  document.getElementById('search-input').value = '';
+  renderLibrary('', false, unit);
+}
+
+function libGoBack() {
+  if (libCurrentLesson) renderLibraryTOC();
+  else switchScreen('home');
+}
+
+function filterWords() {
+  const q = document.getElementById('search-input').value.trim();
+  if (libCurrentLesson) {
+    // In lesson view: search within lesson
+    renderLibrary(q, false, libCurrentLesson);
+  } else {
+    // In TOC view: global search across all lessons in current book
+    if (q) {
+      renderLibraryGlobalSearch(q);
+    } else {
+      // Empty query: restore TOC grid
+      document.getElementById('lib-toc').style.display = '';
+      document.getElementById('word-list').style.display = 'none';
+      renderTOCGrid();
+    }
+  }
+}
+
+function renderLibraryGlobalSearch(q) {
+  const toc = document.getElementById('lib-toc');
+  const wordList = document.getElementById('word-list');
+  toc.style.display = 'none';
+  wordList.style.display = '';
+
+  const bookWords = words.filter(w => w.bookId === currentBookId);
+  const filtered = bookWords.filter(w =>
+    w.arabic.includes(q) || w.plain.includes(q) ||
+    w.zh.includes(q) || (w.en||'').toLowerCase().includes(q.toLowerCase())
+  );
+
+  if (!filtered.length) {
+    wordList.innerHTML = `<div class="empty-state"><div class="e-icon">🔍</div><h3>没有匹配的词汇</h3><p>尝试其他关键词</p></div>`;
+    return;
+  }
+
+  wordList.innerHTML = filtered.map(w => {
+    const p = progress[w.id];
+    const status = p ? p.status : 'new';
+    const statusLabel = { new:'未开始', learning:'学习中', review:'复习', mastered:'已掌握' }[status] || 'new';
+    return `<div class="word-row" onclick="openDetail(${w.id})">
+      <span class="wr-arabic">${w.arabic}</span>
+      <span class="wr-meaning">${w.zh}${w.en ? ' · ' + w.en : ''}</span>
+      <span class="wr-status">
+        <span class="status-dot status-${status}"></span>
+        <span class="wr-status-text">${statusLabel}</span>
+      </span>
+      <span class="wr-actions" onclick="event.stopPropagation()">
+        <span style="font-size:10px;color:var(--text-muted);font-family:'DM Mono',monospace">${w.unit||''}</span>
+        <button class="wr-btn" onclick="openDetail(${w.id})">详情</button>
+      </span>
+    </div>`;
+  }).join('');
+}
+
+function renderLibrary(filter='', wrongOnly=false, lessonFilter=null) {
+  const list = document.getElementById('word-list');
+  const q = filter.toLowerCase().trim();
+  // Scope: lesson filter takes priority, then full book
+  let bookWords = lessonFilter
+    ? words.filter(w => w.bookId === currentBookId && (w.unit||'').split(',').map(x=>x.trim()).includes(lessonFilter))
+    : words.filter(w => w.bookId === currentBookId);
+
+  let filtered = wrongOnly
+    ? bookWords.filter(w => session.wrongIds.has(w.id))
+    : q
+      ? bookWords.filter(w => w.arabic.includes(q) || w.plain.includes(q) || w.zh.includes(q) || (w.en||'').toLowerCase().includes(q))
+      : bookWords;
+
+  // Add a banner if showing wrong words
+  const banner = wrongOnly
+    ? `<div style="margin-bottom:16px;padding:12px 16px;border-radius:10px;border:1px solid var(--rose);background:rgba(224,92,122,0.08);color:var(--rose);font-size:13px">
+        ⚠ 本轮答错的 ${session.wrongIds.size} 个词汇
+        <button onclick="renderLibraryTOC()" style="float:right;background:none;border:none;color:var(--rose);cursor:pointer;font-size:12px">显示全部词库 →</button>
+       </div>`
+    : '';
+
+  if (!filtered.length) {
+    list.innerHTML = banner + `<div class="empty-state">
+      <div class="e-icon">🔍</div>
+      <h3>没有匹配的词汇</h3>
+      <p>尝试其他关键词，或添加新词汇</p>
+    </div>`;
+    return;
+  }
+
+  list.innerHTML = banner + filtered.map(w => {
+    const p = progress[w.id];
+    const status = p ? p.status : 'new';
+    const statusLabel = { new:'未开始', learning:'学习中', review:'复习', mastered:'已掌握' }[status] || 'new';
+    const isWrong = session.wrongIds.has(w.id);
+    const isChecked = libSelectedIds.has(w.id);
+    const checkHtml = libSelectMode
+      ? `<input type="checkbox" class="wr-check" ${isChecked ? 'checked' : ''}
+           onclick="event.stopPropagation();toggleWordSelect(${w.id},this.checked)">`
+      : '';
+    return `<div class="word-row${libSelectMode ? ' word-row-selectable' : ''}${isWrong ? ' word-row-wrong' : ''}${isChecked ? ' word-row-selected' : ''}"
+      onclick="${libSelectMode ? `toggleWordSelectRow(${w.id})` : `openDetail(${w.id})`}">
+      ${checkHtml}
+      <span class="wr-arabic">${w.arabic}</span>
+      <span class="wr-meaning">${w.zh}${w.en ? ' · ' + w.en : ''}</span>
+      <span class="wr-status">
+        <span class="status-dot status-${status}"></span>
+        <span class="wr-status-text">${statusLabel}</span>
+      </span>
+      <span class="wr-actions" onclick="event.stopPropagation()">
+        ${libSelectMode ? '' : `<button class="wr-btn" onclick="openDetail(${w.id})">详情</button>`}
+      </span>
+    </div>`;
+  }).join('');
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   WORD DETAIL
+───────────────────────────────────────────────────────── */
+let currentWordId = null;
+
+function openDetail(id) {
+  const w = words.find(x => x.id === id);
+  if (!w) return;
+  currentWordId = id;
+
+  document.getElementById('d-arabic').textContent = w.arabic;
+  document.getElementById('d-meaning').textContent = w.zh;
+  document.getElementById('d-en').textContent = w.en ? `(${w.en})` : '';
+
+  // Meta tags
+  const meta = document.getElementById('d-meta');
+  meta.innerHTML = '';
+  if (w.pos)   meta.innerHTML += `<span class="detail-tag pos">${w.pos}</span>`;
+  if (w.diff)  meta.innerHTML += `<span class="detail-tag diff">难度 ${w.diff}</span>`;
+  if (w.unit)  meta.innerHTML += `<span class="detail-tag unit">${w.unit}</span>`;
+
+  const p = progress[id];
+  if (p) meta.innerHTML += `<span class="detail-tag" style="border-color:var(--teal-dim);color:var(--teal)">${({new:'未开始',learning:'学习中',review:'复习中',mastered:'已掌握'})[p.status]||'new'}</span>`;
+
+  // Root
+  const rootSec = document.getElementById('d-root-section');
+  if (w.root && w.root.trim()) {
+    document.getElementById('d-root-arabic').textContent = w.root;
+    rootSec.style.display = '';
+  } else {
+    rootSec.style.display = 'none';
+  }
+
+  // Morphology
+  const morphSec = document.getElementById('d-morph-section');
+  if (w.morph && w.morph.trim()) {
+    document.getElementById('d-morph').textContent = w.morph;
+    morphSec.style.display = '';
+  } else {
+    morphSec.style.display = 'none';
+  }
+
+  // Examples
+  const exSec = document.getElementById('d-examples-section');
+  const exList = examples[id] || [];
+  if (exList.length) {
+    document.getElementById('d-examples').innerHTML = exList.map(e =>
+      `<div class="example-item">
+        <div class="example-ar">${e.ar}</div>
+        <div class="example-zh">${e.zh}</div>
+      </div>`
+    ).join('');
+    exSec.style.display = '';
+  } else {
+    exSec.style.display = 'none';
+  }
+
+  document.getElementById('detail-overlay').classList.add('open');
+}
+
+function closeDetail() {
+  document.getElementById('detail-overlay').classList.remove('open');
+  currentWordId = null;
+}
+
+function learnThisWord() {
+  closeDetail();
+  const idx = session.queue ? session.queue.findIndex(w => w.id === currentWordId) : -1;
+  startLearnMode('flashcard');
+  // put the word first
+  if (currentWordId) {
+    const w = words.find(x => x.id === currentWordId);
+    if (w) {
+      session.queue = [w, ...words.filter(x => x.id !== currentWordId).sort(() => Math.random() - 0.5)];
+      session.index = 0;
+      renderCurrent();
+    }
+  }
+}
+
+function deleteWord() {
+  if (!currentWordId) return;
+  const w = words.find(x => x.id === currentWordId);
+  if (!w) return;
+  trash.push({ ...w, deletedAt: Date.now() });
+  words = words.filter(x => x.id !== currentWordId);
+  delete progress[currentWordId];
+  saveWords();
+  saveProgress();
+  saveTrash();
+  closeDetail();
+  if (libCurrentLesson) renderLibraryLesson(libCurrentLesson); else renderLibraryTOC();
+  updateHomeStats();
+  showToast(`已移入垃圾箱「${w.zh}」`, 'rose');
+}
+
+/* ─────────────────────────────────────────────────────────
+   ROOT VIEW
+───────────────────────────────────────────────────────── */
+function openRootView() {
+  if (!currentWordId) return;
+  const w = words.find(x => x.id === currentWordId);
+  if (!w || !w.root) return;
+
+  document.getElementById('ro-root').textContent = w.root;
+
+  const derived = words.filter(x => x.root === w.root);
+  const container = document.getElementById('ro-words');
+
+  if (derived.length === 0) {
+    container.innerHTML = `<div class="empty-state" style="padding:30px 0">
+      <div class="e-icon">🌿</div>
+      <h3>词库中暂无其他派生词</h3>
+    </div>`;
+  } else {
+    container.innerHTML = derived.map(d =>
+      `<div class="derived-word-row" onclick="openDerivedWord(${d.id})">
+        <span class="derived-ar">${d.arabic}</span>
+        <span class="derived-zh">${d.zh}</span>
+        <span class="derived-pos">${d.pos || ''}</span>
+      </div>`
+    ).join('');
+  }
+
+  document.getElementById('root-overlay').classList.add('open');
+}
+
+function openDerivedWord(id) {
+  closeRootView();
+  closeDetail();
+  setTimeout(() => openDetail(id), 50);
+}
+
+function closeRootView() {
+  document.getElementById('root-overlay').classList.remove('open');
+}
+
+/* ─────────────────────────────────────────────────────────
+/* ─────────────────────────────────────────────────────────
+   LESSON PICKER (for Add + Import)
+───────────────────────────────────────────────────────── */
+let lpMode = 'add';       // 'add' | 'import'
+let lpBookId  = null;
+let lpUnit    = null;
+
+function openLessonPicker(mode) {
+  lpMode   = mode;
+  lpBookId = currentBookId || books[0]?.id || null;
+  lpUnit   = null;
+  document.getElementById('lesson-picker-title').textContent =
+    mode === 'add' ? '选择添加目标课次' : '选择导入目标课次';
+  renderLPBookChips();
+  renderLPLessonChips();
+  document.getElementById('lp-new-lesson').value = '';
+  document.getElementById('lesson-picker-overlay').classList.add('open');
+}
+
+function closeLessonPicker() {
+  document.getElementById('lesson-picker-overlay').classList.remove('open');
+}
+
+function renderLPBookChips() {
+  document.getElementById('lp-book-chips').innerHTML = books.map(b =>
+    `<div class="lesson-chip${b.id === lpBookId ? ' active' : ''}" onclick="lpSelectBook('${b.id}')">${b.name}</div>`
+  ).join('');
+}
+
+function lpSelectBook(id) {
+  lpBookId = id;
+  lpUnit   = null;
+  renderLPBookChips();
+  renderLPLessonChips();
+}
+
+function renderLPLessonChips() {
+  const lessons = lpBookId ? getLessonsForBook(lpBookId) : [];
+  const newVal  = document.getElementById('lp-new-lesson').value.trim();
+  // If user typed a new lesson, add it as an option
+  const all = newVal && !lessons.includes(newVal) ? [...lessons, newVal] : lessons;
+  document.getElementById('lp-lesson-chips').innerHTML = all.map(u =>
+    `<div class="lesson-chip${u === lpUnit ? ' active' : ''}" onclick="lpSelectLesson('${u}')">${u}</div>`
+  ).join('') || '<span style="color:var(--text-muted);font-size:12px">该词书暂无课次，请在下方输入新课次</span>';
+}
+
+function lpSelectLesson(u) {
+  lpUnit = u;
+  document.getElementById('lp-new-lesson').value = '';
+  renderLPLessonChips();
+}
+
+function confirmLessonPicker() {
+  const newVal = document.getElementById('lp-new-lesson').value.trim();
+  if (newVal) lpUnit = newVal;
+  if (!lpBookId) { showToast('请选择词书', 'rose'); return; }
+  if (!lpUnit)   { showToast('请选择或输入课次', 'rose'); return; }
+  closeLessonPicker();
+  if (lpMode === 'add') _openAddFormActual();
+  else                  _openImportActual();
+}
+
+/* ─────────────────────────────────────────────────────────
+   ADD / EDIT WORD FORM
+───────────────────────────────────────────────────────── */
+let formMode = 'add'; // 'add' | 'edit'
+
+function openAddForm() {
+  openLessonPicker('add');
+}
+
+function _openAddFormActual() {
+  formMode = 'add';
+  ['arabic','arabic-plain','zh','en','root','morph','notes'].forEach(k => {
+    const el = document.getElementById('f-' + k);
+    if (el) el.value = '';
+  });
+  document.getElementById('f-pos').value   = '';
+  document.getElementById('f-diff').value  = '1';
+  document.getElementById('f-unit').value  = lpUnit || '';
+  document.querySelector('#form-overlay .form-title').textContent =
+    '添加词汇 · ' + (books.find(b => b.id === lpBookId)?.name || '') + ' / ' + (lpUnit || '');
+  document.getElementById('form-save-btn').textContent = '保存词汇';
+  document.getElementById('form-overlay').classList.add('open');
+}
+
+function openEditForm() {
+  const w = words.find(x => x.id === currentWordId);
+  if (!w) return;
+  formMode = 'edit';
+  const editId = currentWordId; // save before closeDetail() nullifies it
+
+  document.getElementById('f-arabic').value       = w.arabic  || '';
+  document.getElementById('f-arabic-plain').value = w.plain   || '';
+  document.getElementById('f-zh').value            = w.zh     || '';
+  document.getElementById('f-en').value            = w.en     || '';
+  document.getElementById('f-pos').value           = w.pos    || '';
+  document.getElementById('f-diff').value          = w.diff   || 1;
+  document.getElementById('f-root').value          = w.root   || '';
+  document.getElementById('f-morph').value         = w.morph  || '';
+  document.getElementById('f-unit').value          = w.unit   || '';
+  document.getElementById('f-notes').value         = w.notes  || '';
+
+  document.querySelector('#form-overlay .form-title').textContent = '编辑词条';
+  document.getElementById('form-save-btn').textContent = '保存修改';
+
+  closeDetail(); // this nullifies currentWordId
+  currentWordId = editId; // restore it so saveWord() can find the word
+  document.getElementById('form-overlay').classList.add('open');
+}
+
+function closeAddForm() {
+  document.getElementById('form-overlay').classList.remove('open');
+}
+
+function saveWord() {
+  const arabic = document.getElementById('f-arabic').value.trim();
+  const zh     = document.getElementById('f-zh').value.trim();
+  if (!arabic || !zh) { showToast('阿拉伯语和中文释义为必填项', 'rose'); return; }
+
+  const fields = {
+    arabic,
+    plain: document.getElementById('f-arabic-plain').value.trim() || arabic.replace(/[\u064B-\u065F]/g, ''),
+    zh,
+    en:    document.getElementById('f-en').value.trim(),
+    pos:   document.getElementById('f-pos').value,
+    diff:  parseInt(document.getElementById('f-diff').value) || 1,
+    root:  document.getElementById('f-root').value.trim(),
+    morph: document.getElementById('f-morph').value.trim(),
+    unit:  document.getElementById('f-unit').value.trim(),
+    notes: document.getElementById('f-notes').value.trim(),
+  };
+
+  if (formMode === 'edit' && currentWordId !== null) {
+    // Update existing word in-place
+    const idx = words.findIndex(x => x.id === currentWordId);
+    if (idx !== -1) {
+      words[idx] = { ...words[idx], ...fields };
+      // Also update in session queue if present
+      const qi = session.queue.findIndex(x => x.id === currentWordId);
+      if (qi !== -1) session.queue[qi] = { ...session.queue[qi], ...fields };
+    }
+    saveWords();
+    closeAddForm();
+    if (libCurrentLesson) renderLibraryLesson(libCurrentLesson); else renderLibraryTOC();
+    updateHomeStats();
+    showToast(`已更新「${zh}」`, 'teal');
+    currentWordId = null;
+  } else {
+    // Add new word — use lpBookId/lpUnit set by lesson picker
+    const newId = words.length ? Math.max(...words.map(w => w.id)) + 1 : 1;
+    words.push({ id: newId, ...fields, unit: lpUnit || fields.unit, bookId: lpBookId || currentBookId });
+    saveWords();
+    closeAddForm();
+    renderLibraryLesson(lpUnit);
+    updateHomeStats();
+    showToast(`已添加「${zh}」`, 'teal');
+  }
+}
+
+/* ─────────────────────────────────────────────────────────
+   AI BULK IMPORT
+───────────────────────────────────────────────────────── */
+let importFileData = null;
+let importFileType = null;
+let importResults = [];
+
+function openImport() {
+  openLessonPicker('import');
+}
+
+function _openImportActual() {
+  importFileData = null; importFileType = null; importResults = [];
+  document.getElementById('import-file').value = '';
+  document.getElementById('import-file-name').textContent = '';
+  document.getElementById('import-run-btn').disabled = true;
+  document.getElementById('import-status').textContent = '';
+  document.getElementById('import-preview').style.display = 'none';
+  document.getElementById('import-drop').classList.remove('has-file');
+  document.querySelector('#import-overlay .form-title').textContent =
+    'AI 批量导入 · ' + (books.find(b => b.id === lpBookId)?.name || '') + ' / ' + (lpUnit || '');
+  document.getElementById('import-overlay').classList.add('open');
+}
+
+function closeImport() {
+  document.getElementById('import-overlay').classList.remove('open');
+}
+
+// Drag and drop
+const dropZone = document.getElementById('import-drop');
+if (dropZone) {
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('has-file'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('has-file'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    const f = e.dataTransfer.files[0];
+    if (f) processImportFile(f);
+  });
+}
+
+function handleImportFile(e) {
+  const f = e.target.files[0];
+  if (f) processImportFile(f);
+}
+
+function processImportFile(file) {
+  const name = file.name.toLowerCase();
+  document.getElementById('import-file-name').textContent = '📎 ' + file.name;
+  document.getElementById('import-drop').classList.add('has-file');
+  document.getElementById('import-preview').style.display = 'none';
+  document.getElementById('import-status').textContent = '';
+
+  if (name.endsWith('.xlsx') || name.endsWith('.xls')) {
+    importFileType = 'excel';
+    const reader = new FileReader();
+    reader.onload = e => { importFileData = e.target.result; document.getElementById('import-run-btn').disabled = false; };
+    reader.readAsArrayBuffer(file);
+  } else if (name.endsWith('.pdf') || name.match(/\.(jpg|jpeg|png|webp|gif)$/)) {
+    importFileType = 'image';
+    const reader = new FileReader();
+    reader.onload = e => { importFileData = e.target.result; document.getElementById('import-run-btn').disabled = false; };
+    reader.readAsDataURL(file);
+  } else {
+    showToast('请上传图片、PDF 或 Excel 文件', 'rose');
+  }
+}
+
+async function runImport() {
+  const btn = document.getElementById('import-run-btn');
+  const status = document.getElementById('import-status');
+  btn.disabled = true;
+
+  try {
+    // ── Excel: direct parse, no AI needed ──────────────────
+    if (importFileType === 'excel') {
+      status.textContent = '⏳ 正在解析 Excel…';
+      const { read, utils } = await import('https://cdn.sheetjs.com/xlsx-0.20.1/package/xlsx.mjs');
+      const wb = read(new Uint8Array(importFileData), { type: 'array' });
+      const results = [];
+      wb.SheetNames.forEach(sheetName => {
+        const ws = wb.Sheets[sheetName];
+        const rows = utils.sheet_to_json(ws, { header: 1, defval: '' });
+        if (rows.length < 2) return;
+        // Skip header row (first row)
+        for (let i = 1; i < rows.length; i++) {
+          const r = rows[i];
+          if (!r || !r[0]) continue;
+          // Column mapping (matches our Excel template):
+          // 0:arabic 1:plain 2:zh 3:en 4:pos 5:root 6:morph 7:diff 8:notes
+          const arabic = String(r[0] || '').trim();
+          if (!arabic) continue;
+          results.push({
+            arabic,
+            plain: String(r[1] || arabic).trim(),
+            zh:    String(r[2] || '').trim(),
+            en:    String(r[3] || '').trim(),
+            pos:   String(r[4] || '').trim(),
+            root:  String(r[5] || '').trim(),
+            morph: String(r[6] || '').trim(),
+            diff:  parseInt(r[7]) || 2,
+            notes: String(r[8] || '').trim(),
+          });
+        }
+      });
+
+      if (!results.length) {
+        status.textContent = '❌ 未能识别到词汇，请检查 Excel 格式';
+        btn.disabled = false;
+        return;
+      }
+
+      importResults = results;
+      status.textContent = `✅ 识别到 ${results.length} 个词汇，请勾选后导入`;
+      renderImportPreview(results);
+      return;
+    }
+
+    // ── Image/PDF: use AI ───────────────────────────────────
+    status.textContent = '⏳ AI 正在识别，请稍候…';
+    const messages = [];
+    const systemPrompt = `你是阿拉伯语词汇提取专家。从用户提供的内容中提取所有阿拉伯语词汇，返回严格的 JSON 数组，每个元素包含以下字段：arabic, plain, morph, zh, pos, root, diff。只返回 JSON 数组。`;
+    const base64 = importFileData.split(',')[1];
+    const mimeMatch = importFileData.match(/data:([^;]+);/);
+    const mime = mimeMatch ? mimeMatch[1] : 'image/jpeg';
+    messages.push({
+      role: 'user',
+      content: [
+        { type: 'image', source: { type: 'base64', media_type: mime, data: base64 } },
+        { type: 'text', text: '请从这张图片中提取所有阿拉伯语词汇信息，按要求格式返回 JSON。' }
+      ]
+    })
+    const resp = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-20250514',
+        max_tokens: 4000,
+        system: systemPrompt,
+        messages
+      })
+    });
+
+    const data = await resp.json();
+    if (!resp.ok) throw new Error(data.error?.message || '请求失败');
+
+    const raw = data.content.find(b => b.type === 'text')?.text || '';
+    // Strip markdown fences if present
+    const cleaned = raw.replace(/```json|```/g, '').trim();
+    importResults = JSON.parse(cleaned);
+
+    if (!Array.isArray(importResults) || importResults.length === 0) {
+      throw new Error('未识别到词汇，请检查文件内容');
+    }
+
+    status.textContent = `✅ 识别完成，共找到 ${importResults.length} 个词汇`;
+    renderImportPreview(importResults);
+
+  } catch (err) {
+    status.textContent = '❌ ' + (err.message || '识别失败');
+    btn.disabled = false;
+    console.error(err);
+  }
+}
+
+function renderImportPreview(results) {
+  document.getElementById('import-preview-count').textContent = `找到 ${results.length} 个词汇，请确认后导入：`;
+  document.getElementById('import-select-all').checked = true;
+
+  const tbody = document.getElementById('import-tbody');
+  tbody.innerHTML = results.map((w, i) => `
+    <tr>
+      <td><input type="checkbox" class="import-check" data-i="${i}" checked></td>
+      <td class="td-arabic">${w.arabic || ''}</td>
+      <td class="td-arabic" style="font-size:13px">${w.morph || '—'}</td>
+      <td>${w.zh || ''}</td>
+      <td class="td-root">${w.root || '—'}</td>
+    </tr>`).join('');
+
+  document.getElementById('import-preview').style.display = 'block';
+}
+
+function toggleSelectAll(checked) {
+  document.querySelectorAll('.import-check').forEach(cb => cb.checked = checked);
+}
+
+function confirmImport() {
+  const checks = document.querySelectorAll('.import-check');
+  const selected = [];
+  checks.forEach(cb => { if (cb.checked) selected.push(importResults[parseInt(cb.dataset.i)]); });
+  if (!selected.length) { showToast('请至少选择一个词汇', 'rose'); return; }
+
+  let nextId = words.length ? Math.max(...words.map(w => w.id)) + 1 : 1;
+  const newWords = selected.map(w => ({
+    id: nextId++,
+    arabic: w.arabic || '',
+    plain: w.plain || (w.arabic || '').replace(/[\u064B-\u065F]/g, ''),
+    zh: w.zh || '',
+    en: w.en || '',
+    pos: w.pos || '',
+    diff: parseInt(w.diff) || 2,
+    root: w.root || '',
+    morph: w.morph || '',
+    unit: lpUnit || '',
+    notes: '',
+    bookId: lpBookId || currentBookId,
+  }));
+
+  words.push(...newWords);
+  saveWords();
+  closeImport();
+  renderLibraryLesson(lpUnit);
+  updateHomeStats();
+  showToast(`已导入 ${newWords.length} 个词汇`, 'teal');
+}
+
+
+function askAI(which) {
+  const w = words.find(x => x.id === currentWordId);
+  if (!w) return;
+  const q = encodeURIComponent(`解释 ${w.arabic}（${w.zh}）：它的词义、词根、用法和例句`);
+  const url = which === 'claude'
+    ? `https://claude.ai/new?q=${q}`
+    : `https://gemini.google.com/app?q=${q}`;
+  window.open(url, '_blank');
+}
+
+/* ─────────────────────────────────────────────────────────
+   TOAST
+───────────────────────────────────────────────────────── */
+let toastTimer;
+function showToast(msg, type='') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = 'toast ' + (type || '');
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+/* ─────────────────────────────────────────────────────────
+   KEYBOARD SHORTCUTS
+───────────────────────────────────────────────────────── */
+document.addEventListener('keydown', e => {
+  if (document.getElementById('detail-overlay').classList.contains('open')) {
+    if (e.key === 'Escape') closeDetail();
+    return;
+  }
+  if (document.getElementById('root-overlay').classList.contains('open')) {
+    if (e.key === 'Escape') closeRootView();
+    return;
+  }
+  if (document.getElementById('form-overlay').classList.contains('open')) {
+    if (e.key === 'Escape') closeAddForm();
+    return;
+  }
+  if (document.getElementById('screen-learn').classList.contains('active')) {
+    if (session.mode === 'flashcard') {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); flipCard(); }
+      if (e.key === '0') scoreCard(0);
+      if (e.key === '1') scoreCard(1);
+      if (e.key === '2') scoreCard(2);
+      if (e.key === '3') scoreCard(3);
+    }
+  }
+});
+
+/* ─────────────────────────────────────────────────────────
+   WORDS.JSON SYNC
+───────────────────────────────────────────────────────── */
+// Set this to your GitHub raw URL after uploading words.json
+// Format: https://raw.githubusercontent.com/USERNAME/REPO/main/words.json
+const WORDS_JSON_URL = 'https://raw.githubusercontent.com/Mansour838/mansour/main/words.json';
+const GH_API_URL     = 'https://api.github.com/repos/Mansour838/mansour/contents/words.json';
+const LS_TOKEN       = 'mansour_gh_token';
+
+/* ── GitHub Sync Overlay ── */
+function openGithubSync() {
+  const saved = localStorage.getItem(LS_TOKEN) || '';
+  document.getElementById('gh-token-input').value = saved;
+  document.getElementById('gh-sync-status').textContent = '';
+  document.getElementById('gh-sync-btn').disabled = false;
+  document.getElementById('gh-sync-btn').textContent = '上传词库';
+  document.getElementById('ghsync-overlay').classList.add('open');
+}
+
+function closeGithubSync() {
+  document.getElementById('ghsync-overlay').classList.remove('open');
+}
+
+async function doGithubSync() {
+  const token = document.getElementById('gh-token-input').value.trim();
+  if (!token) { showToast('请输入 GitHub Token', 'rose'); return; }
+
+  if (document.getElementById('gh-save-token').checked) {
+    localStorage.setItem(LS_TOKEN, token);
+  }
+
+  const btn = document.getElementById('gh-sync-btn');
+  const status = document.getElementById('gh-sync-status');
+  btn.disabled = true;
+  btn.textContent = '上传中…';
+  status.style.color = 'var(--text-muted)';
+  status.textContent = '正在连接 GitHub…';
+
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(words, null, 2))));
+
+    // Check if file exists to get its SHA (required for update)
+    let sha = null;
+    const checkRes = await fetch(GH_API_URL, {
+      headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (checkRes.ok) {
+      const existing = await checkRes.json();
+      sha = existing.sha;
+    }
+
+    status.textContent = '正在上传词库…';
+
+    const body = {
+      message: `词库更新 ${new Date().toLocaleString('zh-CN')} · ${words.length} 词`,
+      content,
+      ...(sha ? { sha } : {})
+    };
+
+    const uploadRes = await fetch(GH_API_URL, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (uploadRes.ok) {
+      status.style.color = 'var(--teal)';
+      status.textContent = `✓ 上传成功！共 ${words.length} 个词汇`;
+      btn.textContent = '已完成';
+      showToast('词库已同步到 GitHub', 'teal');
+      setTimeout(closeGithubSync, 1500);
+    } else {
+      const err = await uploadRes.json();
+      status.style.color = 'var(--rose)';
+      status.textContent = '上传失败：' + (err.message || uploadRes.status);
+      btn.disabled = false;
+      btn.textContent = '重试';
+    }
+  } catch(e) {
+    status.style.color = 'var(--rose)';
+    status.textContent = '网络错误，请检查连接';
+    btn.disabled = false;
+    btn.textContent = '重试';
+  }
+}
+
+async function syncWordsFromGitHub() {
+  try {
+    // Use GitHub API instead of raw URL to bypass CDN cache
+    const res = await fetch(GH_API_URL, {
+      headers: { 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data.content) return;
+
+    // Decode base64 content
+    const decoded = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+    const remoteWords = JSON.parse(decoded);
+    if (!Array.isArray(remoteWords) || remoteWords.length === 0) return;
+
+    // Merge: remote takes priority
+    const localById  = new Map(words.map(w => [w.id, w]));
+    const remoteById = new Map(remoteWords.map(w => [w.id, w]));
+    remoteById.forEach((w, id) => localById.set(id, w));
+    words = [...localById.values()].sort((a,b) => a.id - b.id);
+
+    saveWords();
+    renderBookLessonPanel();
+    updateHomeStats();
+    if (document.getElementById('screen-library').classList.contains('active')) {
+      if (libCurrentLesson) renderLibraryLesson(libCurrentLesson);
+      else renderLibraryTOC();
+    }
+  } catch(e) { /* silently fail if offline */ }
+}
+
+
+/* ─────────────────────────────────────────────────────────
+   INIT
+───────────────────────────────────────────────────────── */
+// Load persisted data first
+loadAll();
+// Pre-select all lessons of current book
+getLessonsForBook(currentBookId).forEach(u => selectedLessons.add(lessonKey(currentBookId, u)));
+renderBookLessonPanel();
+updateHomeStats();
+// Sync words from GitHub in background
+syncWordsFromGitHub();
+</script>
+</body>
+</html>
