@@ -1874,5 +1874,19 @@
     "unit": "p.5",
     "notes": "",
     "bookId": "book_2"
+  },
+  {
+    "id": 135,
+    "arabic": "هەواڵ",
+    "plain": "هەواڵ",
+    "zh": "新闻",
+    "en": "news",
+    "pos": "名词",
+    "diff": 1,
+    "root": "",
+    "morph": "",
+    "unit": "第六讲",
+    "notes": "",
+    "bookId": "book_kurd"
   }
 ]
