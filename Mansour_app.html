@@ -843,6 +843,20 @@ main {
   position: relative;
 }
 .lib-trash-btn:hover { border-color: var(--rose); color: var(--rose); }
+
+.lib-export-btn {
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-family: 'DM Mono', monospace;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.lib-export-btn:hover { border-color: var(--teal); color: var(--teal); }
 .lib-trash-btn .trash-badge {
   position: absolute;
   top: -4px; right: -4px;
@@ -2043,6 +2057,7 @@ select.form-input {
       <button class="add-word-btn" onclick="openAddForm()">+ 添加词汇</button>
       <button class="lib-select-btn" id="lib-select-btn" onclick="toggleLibSelectMode()" style="display:none">选择</button>
       <button class="lib-trash-btn" id="lib-trash-btn" onclick="openTrash()" style="display:none" title="垃圾箱">🗑</button>
+      <button class="lib-export-btn" onclick="openGithubSync()" title="同步词库到 GitHub">☁ 同步</button>
     </div>
     <!-- Bulk selection action bar (shown only in select mode) -->
     <div class="bulk-bar" id="bulk-bar" style="display:none">
@@ -2250,6 +2265,37 @@ select.form-input {
   </div>
 </div>
 
+<!-- ── GITHUB SYNC OVERLAY ───────────────────────────────── -->
+<div class="newbook-overlay" id="ghsync-overlay" onclick="if(event.target===this)closeGithubSync()">
+  <div class="newbook-card" style="max-width:420px;width:100%">
+    <button class="detail-close" onclick="closeGithubSync()">×</button>
+    <div class="form-title">☁ 同步词库到 GitHub</div>
+    <p style="font-size:12px;color:var(--text-muted);margin:8px 0 16px;font-family:'DM Mono',monospace;line-height:1.7">
+      将当前全部词汇上传到 GitHub，手机端刷新后自动同步。
+    </p>
+    <div class="form-group" style="margin-bottom:12px">
+      <label class="form-label">GitHub Personal Access Token</label>
+      <input class="form-input" id="gh-token-input" type="password"
+             placeholder="ghp_xxxxxxxxxxxx"
+             style="font-family:'DM Mono',monospace;font-size:12px">
+      <div style="margin-top:6px;font-size:11px;color:var(--text-muted);font-family:'DM Mono',monospace">
+        Token 仅存本地，不会上传。
+        <a href="https://github.com/settings/tokens/new?scopes=repo&description=Mansour+Sync"
+           target="_blank" style="color:var(--teal)">点此生成 Token ↗</a>
+      </div>
+    </div>
+    <label style="display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text-muted);margin-bottom:16px;cursor:pointer">
+      <input type="checkbox" id="gh-save-token" checked style="accent-color:var(--teal)">
+      记住 Token（存在本地）
+    </label>
+    <div id="gh-sync-status" style="font-size:12px;font-family:'DM Mono',monospace;min-height:18px;margin-bottom:12px"></div>
+    <div class="form-actions">
+      <button class="btn-cancel" onclick="closeGithubSync()">取消</button>
+      <button class="btn-save" id="gh-sync-btn" onclick="doGithubSync()">上传词库</button>
+    </div>
+  </div>
+</div>
+
 <!-- ── TIRED OVERLAY ──────────────────────────────────────── -->
 <div class="tired-overlay" id="tired-overlay" onclick="closeTired(event)">
   <div class="tired-card">
@@ -2340,7 +2386,7 @@ let progress = {};
 let streak = 0;
 
 // ── Books ─────────────────────────────────────────────────
-let books = [{ id: 'book_2', name: '第二册' }];
+let books = [{ id: 'book_2', name: '第二册' }, { id: 'book_kurd', name: '库尔德语' }];
 let currentBookId = 'book_2';
 // Set of "bookId::unit" strings — the scope for study sessions
 let selectedLessons = new Set();
@@ -2491,6 +2537,19 @@ let words = (function() {
     { id:130,arabic:'أَضَافَ',          plain:'أضاف',      zh:'除此之外（动词：添加）', en:'to add; besides',  pos:'动词',  diff:2, root:'ض ي ف', morph:'يُضِيفُ',          unit:'p.4', notes:'أَضَافَ يُضِيفُ', bookId:'book_2' },
     { id:131,arabic:'تَمَتَّعَ',        plain:'تمتع',      zh:'享受，享有',        en:'to enjoy',           pos:'动词',  diff:2, root:'م ت ع', morph:'يَتَمَتَّعُ',       unit:'p.7', notes:'تَمَتَّعَ يَتَمَتَّعُ بِهِ', bookId:'book_2' },
     { id:132,arabic:'هَاتِ',            plain:'هات',       zh:'把……拿过来（命令式）', en:'bring! here!',     pos:'动词',  diff:2, root:'أ ت ي', morph:'',                  unit:'p.24', notes:'命令式动词', bookId:'book_2' },
+    // ── 库尔德语词汇 ─────────────────────────────────────────
+    { id:201, arabic:'هەست و سۆز', plain:'هەست و سۆز', zh:'感情与情感', en:'Feeling / Emotion', pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:202, arabic:'هەوالٌ',     plain:'هەوال',       zh:'新闻',       en:'News',              pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:203, arabic:'سەرقالٌ',   plain:'سەرقال',      zh:'忙碌的',     en:'Busy',              pos:'形容词',diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:204, arabic:'ئاسان',     plain:'ئاسان',       zh:'容易的',     en:'Easy',              pos:'形容词',diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:205, arabic:'پێویست',    plain:'پێویست',      zh:'必要的，需要', en:'Necessary / Need', pos:'形容词',diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:206, arabic:'هەولٌ',     plain:'هەول',        zh:'努力，尝试', en:'Effort / Try',      pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:207, arabic:'ناوچە',     plain:'ناوچە',       zh:'地区',       en:'Area',              pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:208, arabic:'ئەزمون',    plain:'ئەزمون',      zh:'经验',       en:'Experience',        pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:209, arabic:'ئالنگاری',  plain:'ئالنگاری',    zh:'挑战',       en:'Challenge',         pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:210, arabic:'پەروەردە', plain:'پەروەردە',    zh:'教育',       en:'Education',         pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:211, arabic:'گەشەپێندان',plain:'گەشەپێندان', zh:'发展',       en:'Development',       pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
+    { id:212, arabic:'هاوسەنگی', plain:'هاوسەنگی',   zh:'平衡',       en:'Balance',           pos:'名词', diff:1, root:'', morph:'', unit:'第一课', notes:'', bookId:'book_kurd' },
   ];
   return seed;
 })();
@@ -4125,6 +4184,128 @@ document.addEventListener('keydown', e => {
 });
 
 /* ─────────────────────────────────────────────────────────
+   WORDS.JSON SYNC
+───────────────────────────────────────────────────────── */
+// Set this to your GitHub raw URL after uploading words.json
+// Format: https://raw.githubusercontent.com/USERNAME/REPO/main/words.json
+const WORDS_JSON_URL = 'https://raw.githubusercontent.com/Mansour838/mansour/main/words.json';
+const GH_API_URL     = 'https://api.github.com/repos/Mansour838/mansour/contents/words.json';
+const LS_TOKEN       = 'mansour_gh_token';
+
+/* ── GitHub Sync Overlay ── */
+function openGithubSync() {
+  const saved = localStorage.getItem(LS_TOKEN) || '';
+  document.getElementById('gh-token-input').value = saved;
+  document.getElementById('gh-sync-status').textContent = '';
+  document.getElementById('gh-sync-btn').disabled = false;
+  document.getElementById('gh-sync-btn').textContent = '上传词库';
+  document.getElementById('ghsync-overlay').classList.add('open');
+}
+
+function closeGithubSync() {
+  document.getElementById('ghsync-overlay').classList.remove('open');
+}
+
+async function doGithubSync() {
+  const token = document.getElementById('gh-token-input').value.trim();
+  if (!token) { showToast('请输入 GitHub Token', 'rose'); return; }
+
+  if (document.getElementById('gh-save-token').checked) {
+    localStorage.setItem(LS_TOKEN, token);
+  }
+
+  const btn = document.getElementById('gh-sync-btn');
+  const status = document.getElementById('gh-sync-status');
+  btn.disabled = true;
+  btn.textContent = '上传中…';
+  status.style.color = 'var(--text-muted)';
+  status.textContent = '正在连接 GitHub…';
+
+  try {
+    const content = btoa(unescape(encodeURIComponent(JSON.stringify(words, null, 2))));
+
+    // Check if file exists to get its SHA (required for update)
+    let sha = null;
+    const checkRes = await fetch(GH_API_URL, {
+      headers: { 'Authorization': `token ${token}`, 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (checkRes.ok) {
+      const existing = await checkRes.json();
+      sha = existing.sha;
+    }
+
+    status.textContent = '正在上传词库…';
+
+    const body = {
+      message: `词库更新 ${new Date().toLocaleString('zh-CN')} · ${words.length} 词`,
+      content,
+      ...(sha ? { sha } : {})
+    };
+
+    const uploadRes = await fetch(GH_API_URL, {
+      method: 'PUT',
+      headers: {
+        'Authorization': `token ${token}`,
+        'Accept': 'application/vnd.github.v3+json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(body)
+    });
+
+    if (uploadRes.ok) {
+      status.style.color = 'var(--teal)';
+      status.textContent = `✓ 上传成功！共 ${words.length} 个词汇`;
+      btn.textContent = '已完成';
+      showToast('词库已同步到 GitHub', 'teal');
+      setTimeout(closeGithubSync, 1500);
+    } else {
+      const err = await uploadRes.json();
+      status.style.color = 'var(--rose)';
+      status.textContent = '上传失败：' + (err.message || uploadRes.status);
+      btn.disabled = false;
+      btn.textContent = '重试';
+    }
+  } catch(e) {
+    status.style.color = 'var(--rose)';
+    status.textContent = '网络错误，请检查连接';
+    btn.disabled = false;
+    btn.textContent = '重试';
+  }
+}
+
+async function syncWordsFromGitHub() {
+  try {
+    // Use GitHub API instead of raw URL to bypass CDN cache
+    const res = await fetch(GH_API_URL, {
+      headers: { 'Accept': 'application/vnd.github.v3+json' }
+    });
+    if (!res.ok) return;
+    const data = await res.json();
+    if (!data.content) return;
+
+    // Decode base64 content
+    const decoded = decodeURIComponent(escape(atob(data.content.replace(/\n/g, ''))));
+    const remoteWords = JSON.parse(decoded);
+    if (!Array.isArray(remoteWords) || remoteWords.length === 0) return;
+
+    // Merge: remote takes priority
+    const localById  = new Map(words.map(w => [w.id, w]));
+    const remoteById = new Map(remoteWords.map(w => [w.id, w]));
+    remoteById.forEach((w, id) => localById.set(id, w));
+    words = [...localById.values()].sort((a,b) => a.id - b.id);
+
+    saveWords();
+    renderBookLessonPanel();
+    updateHomeStats();
+    if (document.getElementById('screen-library').classList.contains('active')) {
+      if (libCurrentLesson) renderLibraryLesson(libCurrentLesson);
+      else renderLibraryTOC();
+    }
+  } catch(e) { /* silently fail if offline */ }
+}
+
+
+/* ─────────────────────────────────────────────────────────
    INIT
 ───────────────────────────────────────────────────────── */
 // Load persisted data first
@@ -4133,6 +4314,8 @@ loadAll();
 getLessonsForBook(currentBookId).forEach(u => selectedLessons.add(lessonKey(currentBookId, u)));
 renderBookLessonPanel();
 updateHomeStats();
+// Sync words from GitHub in background
+syncWordsFromGitHub();
 </script>
 </body>
 </html>
