@@ -1888,5 +1888,19 @@
     "unit": "第六讲",
     "notes": "",
     "bookId": "book_kurd"
+  },
+  {
+    "id": 136,
+    "arabic": "سەرقاڵ",
+    "plain": "سەرقاڵ",
+    "zh": "忙碌的",
+    "en": "busy",
+    "pos": "形容词",
+    "diff": 1,
+    "root": "",
+    "morph": "",
+    "unit": "第六讲",
+    "notes": "",
+    "bookId": "book_kurd"
   }
 ]
